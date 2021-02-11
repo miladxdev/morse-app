@@ -1,0 +1,76 @@
+* {
+    /* border: 1px dotted blue; */
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+body {
+    height: 100vh;
+    background:#191919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card {
+    width: 470px;
+    height: 700px;
+    padding: 40px;
+    border-radius: 40px;
+    background: #121212;
+    color: #FFFFFF;
+    box-shadow: 0 0 20px #121212;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.morse-screen {
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+    border-radius: 10px;
+    /* background: #191919; */
+    background: linear-gradient(145deg, #1d1d1d, #131313);
+    box-shadow:  5px 5px 0px #121212,
+        -5px -5px 0px #121212;
+    font-size: 40px;
+}
+
+.text-screen {
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+    border-radius: 10px;
+    /* background: #191919; */
+    background: linear-gradient(145deg, #1d1d1d, #131313);
+    box-shadow:  5px 5px 0px #121212,
+        -5px -5px 0px #121212;
+    font-size: 16px;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#morse-btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #222222;
+    background: linear-gradient(145deg, #202020, #131313);
+}
+
+#clear-btn , #delete-btn  {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #222222;
+    
+}
