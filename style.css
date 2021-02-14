@@ -41,7 +41,7 @@ body {
     word-wrap: break-word;
 }
 
-.text-screen {
+#text-screen {
     width: 100%;
     height: 150px;
     padding: 20px;

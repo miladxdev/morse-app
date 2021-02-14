@@ -1,4 +1,4 @@
-const morseAlphabet = [
+const morseAlph = [
     ".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",
     ".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",
     ".--","-..-","-.--","--..","-----",".----","..---","...--","....-",
@@ -6,7 +6,7 @@ const morseAlphabet = [
     "..--..",".----.","-....-","-..-.",".-..-.",".--.-.","-...-","---."
 ];
 
-const alphabet = [
+const alph = [
     "A","B","C","D","E","F","G","H","I","J","K","L","M",
     "N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
     "0","1","2","3","4","5","6","7","8","9",
@@ -14,7 +14,7 @@ const alphabet = [
 ];
 
 const beep = new Audio("snd/beep.wav");
-
+let active = false;
 
 // DOM
 let morseBtn = document.getElementById("morse-btn");
@@ -34,8 +34,8 @@ function clrMorseScreen() {
 function getTextScreen() {
     return textScreen.innerText;
 }
-function setTextScreen(m) {
-    textScreen.innerText += m;
+function setTextScreen(t) {
+    textScreen.innerText += t;
 }
 function clrTextScreen() {
     textScreen.innerText = '';
@@ -46,24 +46,31 @@ let flag1, flag2;
 morseBtn.addEventListener("mousedown", function() {
     flag1 = new Date().getTime();
 
-    beep.currentTime = 1;
-    beep.play();
+    // beep.currentTime = 1;
+    // beep.play();
+    if(active) clearTimeout(to);
 });
 
 // morse button mouseup even
 morseBtn.addEventListener("mouseup", function() {
+
     flag2 = new Date().getTime();
     let passed = flag2 - flag1;
-    console.log("passed: "+passed);
-
     if (passed < 200) {
         setMorseScreen(".");
     } else {
         setMorseScreen("-");
     }
 
-    beep.pause();
-    
-    console.log("audio: "+beep.currentTime+"\n");
+    to = setTimeout(function() {
+        active = true;
+        let index = morseAlph.indexOf(getMorseScreen());
+        if (morseAlph.includes(getMorseScreen())) {
+            setTextScreen(alph[index]);
+        }
 
+        clrMorseScreen();
+    }, 400);
+    
+    // beep.pause();
 });
