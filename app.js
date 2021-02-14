@@ -18,6 +18,7 @@ let active = false;
 
 // DOM
 let morseBtn = document.getElementById("morse-btn");
+let clearBtn = document.getElementById("clear-btn");
 let morseScreen = document.getElementById("morse-screen");
 let textScreen = document.getElementById("text-screen");
 
@@ -45,10 +46,12 @@ let flag1, flag2;
 // morse button mousedown event
 morseBtn.addEventListener("mousedown", function() {
     flag1 = new Date().getTime();
+    
+    beep.currentTime = 1;
+    beep.play();
 
-    // beep.currentTime = 1;
-    // beep.play();
-    if(active) clearTimeout(to);
+    if(active) clearTimeout(mt);
+    clearTimeout(st);
 });
 
 // morse button mouseup even
@@ -56,13 +59,13 @@ morseBtn.addEventListener("mouseup", function() {
 
     flag2 = new Date().getTime();
     let passed = flag2 - flag1;
-    if (passed < 200) {
+    if (passed < 150) {
         setMorseScreen(".");
     } else {
         setMorseScreen("-");
     }
 
-    to = setTimeout(function() {
+    mt = setTimeout(function() {
         active = true;
         let index = morseAlph.indexOf(getMorseScreen());
         if (morseAlph.includes(getMorseScreen())) {
@@ -72,5 +75,14 @@ morseBtn.addEventListener("mouseup", function() {
         clrMorseScreen();
     }, 400);
     
-    // beep.pause();
+    st = setTimeout(function() {
+        setTextScreen("\u00A0"); // blank space
+    }, 1000);
+
+    beep.pause();
+});
+
+
+clearBtn.addEventListener("click", function() {
+    textScreen.innerText = '';
 });

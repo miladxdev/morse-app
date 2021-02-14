@@ -14,6 +14,7 @@ body {
 }
 
 .card {
+    position: relative;
     width: 470px;
     height: 700px;
     padding: 40px;
@@ -37,7 +38,8 @@ body {
     background: linear-gradient(145deg, #242424, #1a1a1a);
     box-shadow:  5px 5px 0px #121212,
         -5px -5px 0px #121212;
-    font-size: 40px;
+    font-size: 60px;
+    text-align: center;
     word-wrap: break-word;
 }
 
@@ -51,6 +53,7 @@ body {
     box-shadow:  5px 5px 0px #121212,
         -5px -5px 0px #121212;
     font-size: 16px;
+    word-wrap: break-word;
 }
 
 .buttons {
@@ -64,8 +67,10 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: #222222;
-    background: linear-gradient(145deg, #202020, #131313);
+    
+    background: linear-gradient(145deg, #242424, #1a1a1a);
+    box-shadow:  5px 5px 0px #121212,
+        -5px -5px 0px #121212;
     cursor: pointer;
 }
 
@@ -78,4 +83,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
 }
