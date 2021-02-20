@@ -44,8 +44,9 @@ function clrTextScreen() {
 }
 
 let flag1, flag2;
-// morse button mousedown event
-morseBtn.addEventListener("mousedown", function() {
+
+// ...morse button mousedown event
+morseBtn.addEventListener("mousedown", () => {
     beep.play();
     flag1 = new Date().getTime();
     
@@ -58,10 +59,12 @@ morseBtn.addEventListener("mousedown", function() {
     // style
     this.style.width = "90px";
     this.style.height = "90px";
+    // morseScreen.style.boxShadow = "inset 0px -20px 20px rgba(0, 248, 0, 0.1)"
 });
 
-// morse button mouseup even
-morseBtn.addEventListener("mouseup", function() {
+
+// ..morse button mouseup even
+morseBtn.addEventListener("mouseup", ()=> {
     beep.pause();
     flag2 = new Date().getTime();
     let passed = flag2 - flag1;
@@ -72,7 +75,7 @@ morseBtn.addEventListener("mouseup", function() {
         setMorseScreen("-");
     }
 
-    mt = setTimeout(function() {
+    mt = setTimeout(() => {
         
         let index = morseAlph.indexOf(getMorseScreen());
         if (morseAlph.includes(getMorseScreen())) {
@@ -80,41 +83,49 @@ morseBtn.addEventListener("mouseup", function() {
         }
 
         clrMorseScreen();
+        // morseScreen.style.boxShadow = "inset 0px 0px 0px rgba(0, 248, 0, 0.0)";
     }, 400);
     
-    st = setTimeout(function() {
+    st = setTimeout(() => {
         setTextScreen("\u00A0"); // blank space
+      
     }, 1000);
 
     active = true;
     // style
     this.style.width = "100px";
     this.style.height = "100px";
+    
 });
 
 
-clearBtn.addEventListener("mousedown", function() {
+// ..clear button events
+clearBtn.addEventListener("mousedown", () => {
     textScreen.innerText = '';
     // style
     this.style.width = "45px";
     this.style.height = "45px";
 });
 
-clearBtn.addEventListener("mouseup", function() {
+clearBtn.addEventListener("mouseup", () => {
     // style
     this.style.width = "50px";
     this.style.height = "50px";
 });
 
 
-deleteBtn.addEventListener("mousedown", function() {
-    textScreen.innerText = '';
+// ..delete button events
+deleteBtn.addEventListener("mousedown", () => {
+    let text = getTextScreen();
+    text = text.slice(0, -1);
+    clrTextScreen();
+    setTextScreen(text);
     // style
     this.style.width = "45px";
     this.style.height = "45px";
 });
 
-deleteBtn.addEventListener("mouseup", function() {
+deleteBtn.addEventListener("mouseup", () => {
     // style
     this.style.width = "50px";
     this.style.height = "50px";
