@@ -56,8 +56,8 @@ morseBtn.addEventListener("mousedown", function() {
         clearTimeout(st);
     } 
     // style
-    this.style.width = "95px";
-    this.style.height = "95px";
+    this.style.width = "90px";
+    this.style.height = "90px";
 });
 
 // morse button mouseup even
@@ -88,7 +88,6 @@ morseBtn.addEventListener("mouseup", function() {
 
     active = true;
     // style
-
     this.style.width = "100px";
     this.style.height = "100px";
 });
