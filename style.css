@@ -15,24 +15,22 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.card > * {
+    margin-top: 40px;
+}
 .card {
     position: relative;
-    width: 470px;
+    width: 440px;
     height: 700px;
-    padding: 40px;
+    padding: 0 30px;
     border-radius: 40px;
     background: #121212;
     color: lime;
     text-shadow: 0 0 16px lime, 0 0 8px lime, 0 0 4px lime;
     box-shadow: 0 0 20px #121212;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-
     user-select: none;
 }
+
 
 #morse-screen {
     width: 100%;
@@ -47,6 +45,7 @@ body {
 
     font-size: 60px;
     text-align: center;
+    overflow: hidden;
     word-wrap: break-word;
 }
 
@@ -55,9 +54,9 @@ body {
     height: 150px;
     padding: 10px;
     border-radius: 10px;
-    /* background: #191919; */
-    background: linear-gradient(145deg, #242424, #1a1a1a);
-    box-shadow:  5px 5px 0px #121212,
+    background: linear-gradient(145deg, #2b2b2b, #202020);
+    box-shadow:  
+        5px 5px 0px #121212,
         -5px -5px 0px #121212;
     font-size: 16px;
     word-wrap: break-word;
@@ -66,21 +65,17 @@ body {
 
 .buttons {
     position: relative;
-    width: 100%;
-    height: 150px;
-    
+    height: 100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-
-    
 }
 
 #morse-btn {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: linear-gradient(145deg, #242424, #1a1a1a);
+    background:#202020;
     cursor: pointer;
     transition: 0.1s ease-out;
 }
@@ -117,4 +112,9 @@ body {
 
     cursor: pointer;
     transition: 0.1s ease-out;
+}
+#morse-btn:hover,
+#clear-btn:hover,
+#delete-btn:hover {
+    background: #252525;
 }

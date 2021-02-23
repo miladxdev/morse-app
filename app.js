@@ -46,12 +46,12 @@ function clrTextScreen() {
 let flag1, flag2;
 
 // ...morse button mousedown event
-morseBtn.addEventListener("mousedown", () => {
+morseBtn.addEventListener("mousedown", function() {
+
     beep.play();
-    flag1 = new Date().getTime();
-    
     beep.currentTime = 0.1;
-    
+    flag1 = new Date().getTime();
+
     if(active) {
         clearTimeout(mt);
         clearTimeout(st);
@@ -64,19 +64,17 @@ morseBtn.addEventListener("mousedown", () => {
 
 
 // ..morse button mouseup even
-morseBtn.addEventListener("mouseup", ()=> {
+morseBtn.addEventListener("mouseup", function() {
     beep.pause();
     flag2 = new Date().getTime();
     let passed = flag2 - flag1;
-
     if (passed < 150) {
         setMorseScreen(".");
     } else {
         setMorseScreen("-");
     }
 
-    mt = setTimeout(() => {
-        
+    mt = setTimeout(() => { // translate morse 
         let index = morseAlph.indexOf(getMorseScreen());
         if (morseAlph.includes(getMorseScreen())) {
             setTextScreen(alph[index]);
@@ -86,10 +84,7 @@ morseBtn.addEventListener("mouseup", ()=> {
         // morseScreen.style.boxShadow = "inset 0px 0px 0px rgba(0, 248, 0, 0.0)";
     }, 400);
     
-    st = setTimeout(() => {
-        setTextScreen("\u00A0"); // blank space
-      
-    }, 1000);
+    st = setTimeout(() => {setTextScreen("\u00A0");}, 1000); // blank space
 
     active = true;
     // style
@@ -100,14 +95,14 @@ morseBtn.addEventListener("mouseup", ()=> {
 
 
 // ..clear button events
-clearBtn.addEventListener("mousedown", () => {
+clearBtn.addEventListener("mousedown", function() {
     textScreen.innerText = '';
     // style
     this.style.width = "45px";
     this.style.height = "45px";
 });
 
-clearBtn.addEventListener("mouseup", () => {
+clearBtn.addEventListener("mouseup", function() {
     // style
     this.style.width = "50px";
     this.style.height = "50px";
@@ -115,7 +110,7 @@ clearBtn.addEventListener("mouseup", () => {
 
 
 // ..delete button events
-deleteBtn.addEventListener("mousedown", () => {
+deleteBtn.addEventListener("mousedown", function() {
     let text = getTextScreen();
     text = text.slice(0, -1);
     clrTextScreen();
@@ -125,9 +120,8 @@ deleteBtn.addEventListener("mousedown", () => {
     this.style.height = "45px";
 });
 
-deleteBtn.addEventListener("mouseup", () => {
+deleteBtn.addEventListener("mouseup", function() {
     // style
     this.style.width = "50px";
     this.style.height = "50px";
 });
-
