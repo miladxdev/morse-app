@@ -22,6 +22,7 @@ let clearBtn = document.getElementById("clear-btn");
 let deleteBtn = document.getElementById("delete-btn");
 let morseScreen = document.getElementById("morse-screen");
 let textScreen = document.getElementById("text-screen");
+let TimeSection = document.querySelector(".time");
 
 // functions
 function getMorseScreen() {
@@ -125,3 +126,8 @@ deleteBtn.addEventListener("mouseup", function() {
     this.style.width = "50px";
     this.style.height = "50px";
 });
+
+
+setInterval(() => {
+    TimeSection.innerText = Date().substring(16, 24);
+}, 1000);
