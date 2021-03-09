@@ -9,7 +9,7 @@ body {
     background:#1d1d1d;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
     font-family: 'Courier New', Courier, monospace;
@@ -20,13 +20,13 @@ body {
 }
 .card {
     position: relative;
-    width: 440px;
-    height: 700px;
+    width: 450px;
+    height: 650px;
     padding: 0 30px;
-    border-radius: 40px;
+    border-radius: 10px;
     background: #121212;
     color: lime;
-    text-shadow: 0 0 16px lime, 0 0 8px lime, 0 0 4px lime;
+    text-shadow: 0 0 8px lime, 0 0 4px lime;
     box-shadow: 0 0 20px #121212;
     user-select: none;
 }
@@ -46,6 +46,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     /* background: #191919; */
+    
     background: linear-gradient(145deg, #242424, #1a1a1a);
     box-shadow:  
         5px 5px 0px #121212,
@@ -63,10 +64,12 @@ body {
     padding: 10px;
     border-radius: 10px;
     background: linear-gradient(145deg, #2b2b2b, #202020);
+    text-shadow: none;
+    color: white;
     box-shadow:  
         5px 5px 0px #121212,
         -5px -5px 0px #121212;
-    font-size: 16px;
+    font-size: 18px;
     word-wrap: break-word;
 }
 
@@ -125,4 +128,28 @@ body {
 #clear-btn:hover,
 #delete-btn:hover {
     background: #252525;
+}
+
+
+
+.alphabet {
+    width: 150px;
+    height: 650px;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #121212;
+    color: white;
+    overflow-y: scroll;
+}
+.alphabet::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+}
+.alphabet::-webkit-scrollbar-thumb {
+    background: #161616;
+    cursor: pointer;
+}
+.alphabet::-webkit-scrollbar-thumb:hover {
+    background: #202020;
 }
