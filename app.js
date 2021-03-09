@@ -50,7 +50,7 @@ let flag1, flag2;
 morseBtn.addEventListener("mousedown", function() {
 
     beep.play();
-    beep.currentTime = 0.1;
+    
     flag1 = new Date().getTime();
 
     if(active) {
@@ -67,6 +67,7 @@ morseBtn.addEventListener("mousedown", function() {
 // ..morse button mouseup even
 morseBtn.addEventListener("mouseup", function() {
     beep.pause();
+    beep.currentTime = 0.1;
     flag2 = new Date().getTime();
     let passed = flag2 - flag1;
     if (passed < 150) {
@@ -128,6 +129,6 @@ deleteBtn.addEventListener("mouseup", function() {
 });
 
 
-setInterval(() => {
+setInterval(() => { // display time
     TimeSection.innerText = Date().substring(16, 24);
 }, 1000);
