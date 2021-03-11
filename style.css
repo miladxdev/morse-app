@@ -16,7 +16,8 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 header {
-    
+    padding: 20px;
+    border-radius: 5px;
     background: #121212;
 }
 .wrapper {
@@ -145,6 +146,26 @@ header {
 }
 
 
+@media (max-width: 850px) {
+    .wrapper {
+        flex-direction: column;
+        /* background: red; */
+    }
+    .morse {
+        width: 100%;
+    }
+    .wrapper .alphabet,
+    .wrapper .card {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+        /* color: red; */
+    }
+    .about {
+        margin-top: 40px;
+    }
+}
+
 
 .alphabet {
     width: 150px;
@@ -192,6 +213,7 @@ header {
 
 
 footer {
-    
+    padding: 40px;
+    border-radius: 5px;
     background: #121212;
 }
