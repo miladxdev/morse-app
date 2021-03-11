@@ -38,7 +38,7 @@ function getTextScreen() {
     return textScreen.innerText;
 }
 function setTextScreen(t) {
-    textScreen.innerText += t;
+    textScreen.innerHTML += t;
 }
 function clrTextScreen() {
     textScreen.innerText = '';
@@ -61,8 +61,8 @@ morseBtn.addEventListener("mousedown", function() {
     this.style.width = "90px";
     this.style.height = "90px";
     // morseScreen.style.boxShadow = "inset 0px -20px 20px rgba(0, 248, 0, 0.1)"
-});
 
+});
 
 // ..morse button mouseup even
 morseBtn.addEventListener("mouseup", function() {
@@ -86,8 +86,8 @@ morseBtn.addEventListener("mouseup", function() {
         // morseScreen.style.boxShadow = "inset 0px 0px 0px rgba(0, 248, 0, 0.0)";
     }, 400);
     
-    st = setTimeout(() => {setTextScreen("\u00A0");}, 1000); // blank space
-
+    st = setTimeout(() => {setTextScreen('&#9647');}, 1000); // blank space
+   
     active = true;
     // style
     this.style.width = "100px";
@@ -99,6 +99,7 @@ morseBtn.addEventListener("mouseup", function() {
 // ..clear button events
 clearBtn.addEventListener("mousedown", function() {
     textScreen.innerText = '';
+    clearTimeout(st);
     // style
     this.style.width = "45px";
     this.style.height = "45px";
