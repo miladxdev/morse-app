@@ -10,23 +10,11 @@ body {
     color: rgb(200, 200, 200);
     /* color: red;
     text-shadow: 1px 1px 10px red; */
-    
+    display: flex;
+    justify-content: space-around;
     /* align-items: center; */
 
     font-family: 'Courier New', Courier, monospace;
-}
-header {
-    padding: 20px;
-    border-radius: 5px;
-    background: #121212;
-}
-.wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 40px;
-    /* border: 1px solid red; */
-    display: flex;
-    justify-content: space-between;
 }
 
 .morse > * {
@@ -37,7 +25,7 @@ header {
     width: 500px;
     height: 650px;
     padding: 0 30px;
-    
+    margin-top: 40px;
     border-radius: 10px;
     background: #121212;
     /* color: lime; */
@@ -171,7 +159,7 @@ header {
     width: 150px;
     height: 650px;
     padding: 20px;
-    
+    margin-top: 40px;
     border-radius: 10px;
     font-size: 16px;
     background: #121212;
@@ -196,24 +184,13 @@ header {
 .card {
     width: 300px;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 40px;
     border-radius: 10px;
     font-size: 14px;
     background: #121212;
     transition: .5s;
 }
-.card:nth-child(1) {
-    margin-top: 0;
-}
 .card:hover {
     box-shadow: 0 0 10px #121212;
 }
 
-
-
-
-footer {
-    padding: 40px;
-    border-radius: 5px;
-    background: #121212;
-}
