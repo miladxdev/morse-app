@@ -29,7 +29,7 @@ function getMorseScreen() {
     return morseScreen.innerText;
 }
 function setMorseScreen(m) {
-    morseScreen.innerText += m;
+    morseScreen.innerHTML += m;
 }
 function clrMorseScreen() {
     morseScreen.innerText = '';
@@ -72,7 +72,7 @@ morseBtn.addEventListener("mouseup", function() {
     let passed = flag2 - flag1;
     if (passed < 150) {
         setMorseScreen(".");
-    } else {
+    } else if (passed < 450) {
         setMorseScreen("-");
     }
 
@@ -86,7 +86,7 @@ morseBtn.addEventListener("mouseup", function() {
         // morseScreen.style.boxShadow = "inset 0px 0px 0px rgba(0, 248, 0, 0.0)";
     }, 400);
     
-    st = setTimeout(() => {setTextScreen('&#9647');}, 1000); // blank space
+    st = setTimeout(() => {setTextScreen('&nbsp');}, 1050); // blank space
    
     active = true;
     // style

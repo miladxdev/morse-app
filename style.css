@@ -12,8 +12,8 @@ body {
     height: 100vh;
     background:#1d1d1d;
     color: rgb(200, 200, 200);
-    /* color: red;
-    text-shadow: 1px 1px 10px red; */
+    /* color: red; */
+    /* text-shadow: 1px 1px 10px red; */
     line-height: 1.2em;
     display: flex;
     justify-content: space-around;
@@ -76,13 +76,13 @@ h2,h3 {
     height: 200px;
     padding: 10px;
     border-radius: 10px;
-    background: linear-gradient(145deg, #2d2d2d, #232323);
+    /* background: linear-gradient(145deg, #2d2d2d, #232323); */
+    background: linear-gradient(145deg, #242424, #1a1a1a);
     text-shadow: none;
-   
     box-shadow:  
         5px 5px 0px #121212,
         -5px -5px 0px #121212;
-    font-size: 18px;
+    font-size: 20px;
     word-wrap: break-word;
 }
 
