@@ -35,13 +35,13 @@ function clrMorseScreen() {
     morseScreen.innerText = '';
 }
 function getTextScreen() {
-    return textScreen.innerText;
+    return textScreen.innerHTML;
 }
 function setTextScreen(t) {
     textScreen.innerHTML += t;
 }
 function clrTextScreen() {
-    textScreen.innerText = '';
+    textScreen.innerHTML = '';
 }
 
 let flag1, flag2;
@@ -80,6 +80,9 @@ morseBtn.addEventListener("mouseup", function() {
         let index = morseAlph.indexOf(getMorseScreen());
         if (morseAlph.includes(getMorseScreen())) {
             setTextScreen(alph[index]);
+            
+            checkAnswer();
+               
         }
 
         clrMorseScreen();

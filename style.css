@@ -46,10 +46,10 @@ h2,h3 {
 
 .status-bar {
     /* border: 1px solid red; */
-    /* display: flex;
+    display: flex;
     justify-content: space-between;
-    align-items: center; */
-}
+    align-items: center;
+} 
 
 input#level {
     appearance: none;
