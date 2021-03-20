@@ -14,7 +14,8 @@ const alph = [
 ];
 
 const beep = new Audio("snd/beep.wav");
-var active = false;
+let isMoueUp = false;
+let ping = 150;
 
 // DOM
 let morseBtn = document.getElementById("morse-btn");
@@ -48,12 +49,12 @@ let flag1, flag2;
 
 // ...morse button mousedown event
 morseBtn.addEventListener("mousedown", function() {
-
+    
     beep.play();
     
     flag1 = new Date().getTime();
 
-    if(active) {
+    if(isMoueUp) {
         clearTimeout(mt);
         clearTimeout(st);
     } 
@@ -70,9 +71,9 @@ morseBtn.addEventListener("mouseup", function() {
     beep.currentTime = 0.1;
     flag2 = new Date().getTime();
     let passed = flag2 - flag1;
-    if (passed < 150) {
+    if (passed < ping) {
         setMorseScreen(".");
-    } else if (passed < 450) {
+    } else if (passed < 3*ping) {
         setMorseScreen("-");
     }
 
@@ -89,9 +90,9 @@ morseBtn.addEventListener("mouseup", function() {
         // morseScreen.style.boxShadow = "inset 0px 0px 0px rgba(0, 248, 0, 0.0)";
     }, 400);
     
-    st = setTimeout(() => {setTextScreen('&nbsp');}, 1050); // blank space
+    st = setTimeout(() => {setTextScreen('&nbsp');}, 7*ping); // blank space
    
-    active = true;
+    isMoueUp = true;
     // style
     this.style.width = "100px";
     this.style.height = "100px";
