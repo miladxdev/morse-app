@@ -27,13 +27,13 @@ let TimeSection = document.querySelector(".time");
 
 // functions
 function getMorseScreen() {
-    return morseScreen.innerText;
+    return morseScreen.innerHTML;
 }
 function setMorseScreen(m) {
     morseScreen.innerHTML += m;
 }
 function clrMorseScreen() {
-    morseScreen.innerText = '';
+    morseScreen.innerHTML = '';
 }
 function getTextScreen() {
     return textScreen.innerHTML;
@@ -134,6 +134,6 @@ deleteBtn.addEventListener("mouseup", function() {
 });
 
 
-setInterval(() => { // display time
-    TimeSection.innerText = Date().substring(16, 24);
-}, 1000);
+// setInterval(() => { // display time
+//     TimeSection.innerText = Date().substring(16, 24);
+// }, 1000);
