@@ -11,7 +11,7 @@ img { filter: invert(); }
 body {
     height: 100vh;
     background:#1d1d1d;
-    color: rgb(200, 200, 200);
+    color: #c8c8c8;
     /* color: red; */
     /* text-shadow: 1px 1px 10px red; */
     line-height: 1.2em;
@@ -195,7 +195,7 @@ input#level::-webkit-slider-thumb {
     border-radius: 10px;
     font-size: 14px;
     background: #121212;
-    transition: .5s;
+    transition: box-shadow .5s;
 }
 .card:hover {
     box-shadow: 0 0 10px #121212;
