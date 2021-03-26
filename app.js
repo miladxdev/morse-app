@@ -27,22 +27,22 @@ let TimeSection = document.querySelector(".time");
 
 // functions
 function getMorseScreen() {
-    return morseScreen.innerHTML;
+    return morseScreen.innerText;
 }
 function setMorseScreen(m) {
-    morseScreen.innerHTML += m;
+    morseScreen.innerText += m;
 }
 function clrMorseScreen() {
-    morseScreen.innerHTML = '';
+    morseScreen.innerText = '';
 }
 function getTextScreen() {
-    return textScreen.innerHTML;
+    return textScreen.innerText;
 }
 function setTextScreen(t) {
     textScreen.innerHTML += t;
 }
 function clrTextScreen() {
-    textScreen.innerHTML = '';
+    textScreen.innerText = '';
 }
 
 let flag1, flag2;
@@ -61,8 +61,6 @@ morseBtn.addEventListener("mousedown", function() {
     // style
     this.style.width = "90px";
     this.style.height = "90px";
-    // morseScreen.style.boxShadow = "inset 0px -20px 20px rgba(0, 248, 0, 0.1)"
-
 });
 
 // ..morse button mouseup even
@@ -87,10 +85,9 @@ morseBtn.addEventListener("mouseup", function() {
         }
 
         clrMorseScreen();
-        // morseScreen.style.boxShadow = "inset 0px 0px 0px rgba(0, 248, 0, 0.0)";
     }, 400);
     
-    st = setTimeout(() => {setTextScreen('&nbsp');}, 7*ping); // blank space
+    st = setTimeout(() => {setTextScreen('&nbsp;');}, 7*ping); // blank space
    
     isMoueUp = true;
     // style
