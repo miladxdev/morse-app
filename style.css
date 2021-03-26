@@ -189,7 +189,7 @@ input#level::-webkit-slider-thumb {
     height: 650px;
 }
 .card {
-    width: 300px;
+    width: 270px;
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 10px;
@@ -211,6 +211,23 @@ input#level::-webkit-slider-thumb {
     opacity: .6;
 }
 
+@media (max-width: 800px) {
+    body {
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .morse,
+    .alphabet,
+    .side-bar,
+    .card {
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+    }
+}
 
 /* @-webkit-keyframes flicker {
     0%{background:#202020}
