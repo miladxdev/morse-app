@@ -23,7 +23,6 @@ let clearBtn = document.getElementById("clear-btn");
 let deleteBtn = document.getElementById("delete-btn");
 let morseScreen = document.getElementById("morse-screen");
 let textScreen = document.getElementById("text-screen");
-let TimeSection = document.querySelector(".time");
 
 // functions
 function getMorseScreen() {
@@ -75,20 +74,19 @@ morseBtn.addEventListener("mouseup", function() {
         setMorseScreen("-");
     }
 
-    mt = setTimeout(() => { // translate morse 
+    mt = setTimeout(() => { // translate morse
         let index = morseAlph.indexOf(getMorseScreen());
         if (morseAlph.includes(getMorseScreen())) {
+
             setTextScreen(alph[index]);
-            
+            st = setTimeout(() => { setTextScreen('&nbsp;');}, 7*ping ); // blank space
             checkAnswer();
                
         }
 
         clrMorseScreen();
-    }, 400);
+    }, 3*ping);
     
-    st = setTimeout(() => {setTextScreen('&nbsp;');}, 7*ping); // blank space
-   
     isMoueUp = true;
     // style
     this.style.width = "100px";
@@ -131,6 +129,20 @@ deleteBtn.addEventListener("mouseup", function() {
 });
 
 
-// setInterval(() => { // display time
-//     TimeSection.innerText = Date().substring(16, 24);
-// }, 1000);
+// show hide alphabet
+const elem_alphabet = document.querySelector('.alphabet');
+const elem_alphabet_num = document.querySelector('.num');
+
+var toggle = false;
+textScreen.addEventListener('click', () => {
+    console.log(toggle);
+    if (!toggle) {
+        elem_alphabet.style.right = '-180px';
+        elem_alphabet_num.style.left = '-180px';
+        toggle = !toggle;
+    } else {
+        elem_alphabet.style.right = '20px';
+        elem_alphabet_num.style.left = '20px';
+        toggle = !toggle;
+    }
+});

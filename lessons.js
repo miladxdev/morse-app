@@ -5,7 +5,6 @@ let randomAlph = alph[Math.floor(Math.random() * 26)];
 let score = 0;
 
 tryElement.innerHTML = "Try: " + randomAlph;
-        
 
 function checkAnswer() {
     if (getTextScreen() == randomAlph) {
