@@ -1,246 +1,216 @@
 * {
-    /* border: 1px dotted blue; */
-    box-sizing: border-box;
-    margin: 0; padding: 0;
+  /* border: 1px dotted blue; */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
-img { filter: invert(); }
-
+img {
+  filter: invert();
+}
 
 body {
-    height: 100vh;
-    background:#1d1d1d;
-    color: #c8c8c8;
-    /* color: red; */
-    /* text-shadow: 1px 1px 10px red; */
-    line-height: 1.2em;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: 'Courier New', Courier, monospace;
+  height: 100vh;
+  background: #1d1d1d;
+  color: #c8c8c8;
+  /* color: red; */
+  /* text-shadow: 1px 1px 10px red; */
+  line-height: 1.2em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
 }
 
-
-h2,h3 {
-    margin-bottom: 10px;
+h2,
+h3 {
+  margin-bottom: 10px;
 }
 
-
-
-.morse > * { 
-    margin-top: 40px;
-} 
+.morse > * {
+  margin-top: 40px;
+}
 .morse {
-    position: relative;
-    width: 500px;
-    height: 650px;
-    padding: 0 30px;
-    border-radius: 10px;
-    background: #121212;
-    /* color: lime; */
-    /* text-shadow: 0 0 8px lime, 0 0 4px lime; */
-    box-shadow: 0 0 20px #121212;
-    user-select: none;
+  position: relative;
+  width: 500px;
+  height: 650px;
+  padding: 0 30px;
+  border-radius: 10px;
+  background: #121212;
+  /* color: lime; */
+  /* text-shadow: 0 0 8px lime, 0 0 4px lime; */
+  box-shadow: 0 0 20px #121212;
+  user-select: none;
 }
 
 .status-bar {
-    /* border: 1px solid red; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} 
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 input#level {
-    appearance: none;
-    width: 100%;
-    height: 4px;
-    background: grey;
-
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: grey;
 }
 input#level::-webkit-slider-thumb {
-    appearance: none;
-    width: 14px;
-    height: 14px;
-    background: grey;
-    border-radius: 50%;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: grey;
+  border-radius: 50%;
 }
 
 #morse-screen {
-    width: 100%;
-    height: 140px;
-    padding: 20px;
-    border-radius: 10px;
-    /* background: #191919; */
-    
-    background: linear-gradient(145deg, #242424, #1a1a1a);
-    box-shadow:  
-        5px 5px 0px #121212,
-        -5px -5px 0px #121212;
+  width: 100%;
+  height: 140px;
+  padding: 20px;
+  border-radius: 10px;
+  /* background: #191919; */
 
-    font-size: 80px;
-    text-align: center;
-    overflow: hidden;
-    word-wrap: break-word;
+  background: linear-gradient(145deg, #242424, #1a1a1a);
+  box-shadow: 5px 5px 0px #121212, -5px -5px 0px #121212;
+
+  font-size: 80px;
+  text-align: center;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 #text-screen {
-    width: 100%;
-    height: 200px;
-    padding: 10px;
-    border-radius: 10px;
-    /* background: linear-gradient(145deg, #2d2d2d, #232323); */
-    background: linear-gradient(145deg, #242424, #1a1a1a);
-    text-shadow: none;
-    box-shadow:  
-        5px 5px 0px #121212,
-        -5px -5px 0px #121212;
-    font-size: 20px;
-    word-wrap: break-word;
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  /* background: linear-gradient(145deg, #2d2d2d, #232323); */
+  background: linear-gradient(145deg, #242424, #1a1a1a);
+  text-shadow: none;
+  box-shadow: 5px 5px 0px #121212, -5px -5px 0px #121212;
+  font-size: 20px;
+  word-wrap: break-word;
 }
 
-
 .buttons {
-    position: relative;
-    height: 100px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  position: relative;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #morse-btn {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background:#202020;
-    box-shadow: inset 0 0 4px grey;
-    cursor: pointer;
-    transition: 0.1s ease-out;
-    /* -webkit-animation: flicker 4s ease infinite;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #202020;
+  box-shadow: inset 0 0 4px grey;
+  cursor: pointer;
+  transition: 0.1s ease-out;
+  /* -webkit-animation: flicker 4s ease infinite;
     animation: flicker 4s ease infinite; */
 }
 
-#clear-btn  {
-    position: absolute;
-    left: 40px;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#clear-btn {
+  position: absolute;
+  left: 40px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #222222;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #222222;
 
-    cursor: pointer;
-    transition: 0.1s ease-out;
+  cursor: pointer;
+  transition: 0.1s ease-out;
 }
 
-#delete-btn  {
-    position: absolute;
-    transform: translateX(50%);
-    right: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#delete-btn {
+  position: absolute;
+  transform: translateX(50%);
+  right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #222222;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #222222;
 
-    cursor: pointer;
-    transition: 0.1s ease-out;
+  cursor: pointer;
+  transition: 0.1s ease-out;
 }
 #morse-btn:hover,
 #clear-btn:hover,
 #delete-btn:hover {
-    background: #252525;
+  background: #252525;
 }
-
-
 
 .alphabet,
 .num-alphabet {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    width: 150px;
-    height: 650px;
-    padding: 20px;
-    margin-top: 0;
-    border-radius: 10px;
-    font-size: 16px;
-    line-height: 24px;
-    background: #121212;
-    overflow-y: scroll;
-    transition: .5s;
-    z-index: -1;
-    /* overflow: hidden; */
-
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 150px;
+  height: 650px;
+  padding: 20px;
+  margin-top: 0;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 22px;
+  background: #121212;
+  overflow-y: scroll;
+  transition: 0.5s;
+  z-index: -1;
+  /* overflow: hidden; */
 }
 .num {
-    position: absolute;
-    top: 0;
-    left: 20px;
+  position: absolute;
+  top: 0;
+  left: 20px;
 }
 .alphabet::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 10px;
+  -webkit-appearance: none;
+  width: 10px;
 }
 .alphabet::-webkit-scrollbar-thumb {
-    background: #161616;
-    cursor: pointer;
+  background: #161616;
+  cursor: pointer;
 }
 .alphabet::-webkit-scrollbar-thumb:hover {
-    background: #202020;
+  background: #202020;
 }
-
-
 
 .side-bar {
-    height: 650px;
+  height: 650px;
 }
 .card {
-    width: 270px;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    font-size: 14px;
-    background: #121212;
-    transition: box-shadow .5s;
+  width: 270px;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #121212;
+  transition: box-shadow 0.5s;
 }
 .card:hover {
-    box-shadow: 0 0 10px #121212;
+  box-shadow: 0 0 10px #121212;
 }
 .card .social {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
 }
 .social img {
-    width: 40px;
-    opacity: .6;
-}
-
-@media (max-width: 800px) {
-    body {
-        height: auto;
-        padding: 20px;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-    }
-    .morse,
-    .alphabet,
-    .side-bar,
-    .card {
-        width: 100%;
-        margin-top: 20px;
-        text-align: center;
-    }
+  width: 40px;
+  opacity: 0.6;
 }
 
 /* @-webkit-keyframes flicker {
