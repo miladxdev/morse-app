@@ -133,7 +133,7 @@ deleteBtn.addEventListener("mouseup", function() {
 const elem_alphabet = document.querySelector('.alphabet');
 const elem_alphabet_num = document.querySelector('.num');
 
-var toggle = false;
+var toggle = true;
 textScreen.addEventListener('click', () => {
     console.log(toggle);
     if (!toggle) {
