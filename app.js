@@ -130,19 +130,28 @@ deleteBtn.addEventListener("mouseup", function() {
 
 
 // show hide alphabet
-const elem_alphabet = document.querySelector('.alphabet');
-const elem_alphabet_num = document.querySelector('.num');
+const settingsSec = document.querySelector('.settings');
+const settingBtn = document.querySelector('#set-btn');
 
-var toggle = true;
-textScreen.addEventListener('click', () => {
-    console.log(toggle);
+var toggle = false;
+settingBtn.addEventListener('click', () => {
     if (!toggle) {
-        elem_alphabet.style.right = '-180px';
-        elem_alphabet_num.style.left = '-180px';
+        settingsSec.style.height = '57px';
         toggle = !toggle;
     } else {
-        elem_alphabet.style.right = '20px';
-        elem_alphabet_num.style.left = '20px';
+        settingsSec.style.height = '650px';
+        toggle = !toggle;
+    }
+});
+
+const cheatCodeSec = document.querySelector('.cheat-code');
+const cheatBtn = document.querySelector('#cheat-btn');
+cheatBtn.addEventListener('click', () => {
+    if (!toggle) {
+        cheatCodeSec.style.height = '57px';
+        toggle = !toggle;
+    } else {
+        cheatCodeSec.style.height = '650px';
         toggle = !toggle;
     }
 });

@@ -1,90 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="scss/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <title>morse app</title>
-</head>
-<body>
-
-    
+  </head>
+  <body>
+    <div class="settings">
+      <div class="icon" id="set-btn"><i class="fa fa-cog"></i></div>
+      <h3 class="title">Settings</h3>
+      <div class="set">
+        <span>Show alphabet</span>
+        <label class="toggle">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="set">
+        <span>Show tips</span>
+        <label class="toggle">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="set">
+        <span>training mode</span>
+        <label class="toggle">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="set">
+        <span>Mute</span>
+        <label class="toggle">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="set">
+        <span>Dark mode</span>
+        <label class="toggle">
+          <input type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
 
     <div class="morse">
+      <div class="status-bar">
+        <div id="try"></div>
+        <!-- <input type="range" name="level" id="level" min='0' max='100'> -->
+        <div id="score">score: 0</div>
+      </div>
+      <div id="morse-screen"></div>
 
-        <div class="status-bar">
+      <div id="text-screen"></div>
 
-            <div id="try"></div>
-            <!-- <input type="range" name="level" id="level" min='0' max='100'> -->
-            <div id="score">score: 0</div>
-            
-        </div>
-        <div id="morse-screen"></div>
+      <div class="buttons">
+        <div id="clear-btn">C</div>
+        <div id="morse-btn"></div>
+        <div id="delete-btn">CE</div>
+      </div>
+    </div>
 
-        <div id="text-screen"></div>
-        
-        <div class="buttons">
-            <div id="clear-btn">C</div>
-            <div id="morse-btn"></div>
-            <div id="delete-btn">CE</div>
-        </div>
-
-        <div class="alphabet">
-            a : .-<br>
-            b : -...<br>
-            c : -.-.<br>
-            d : -..<br>
-            e : .<br>
-            f : ..-.<br>
-            g : --.<br>
-            h : ....<br>
-            i : ..<br>
-            j : .---<br>
-            k : -.-<br>
-            l : .-..<br>
-            m : --<br>
-            n : -.<br>
-            o : ---<br>
-            p : .--.<br>
-            q : --.-<br>
-            r : .-.<br>
-            s : ...<br>
-            t : -<br>
-            u : ..-<br>
-            v : ...-<br>
-            w : .--<br>
-            x : -..-<br>
-            y : -.--<br>
-            z : --..<br>
-            
-        </div>
-
-        <div class="alphabet num">
-            0 : -----<br>
-            1 : .----<br>
-            2 : ..---<br>
-            3 : ...--<br>
-            4 : ....-<br>
-            5 : .....<br>
-            6 : -....<br>
-            7 : --...<br>
-            8 : ---..<br>
-            9 : ----.<br>
-            . : .-.-.-<br>
-            , : --..--<br>
-            : : ---...<br>
-            ? : ..--..<br>
-            ' : .----.<br>
-            - : -....-<br>
-            / : -..-.<br>
-            " : .-..-.<br>
-            @ : .--.-.<br>
-            = : -...-<br>
-            ! : ---.<br>
+    <div class="cheat-code">
+      <div class="icon" id="cheat-btn"><i class="fa fa-code"></i></div>
+      <h3 class="title">Cheat code</h3>
+      <div class="alphabet">
+        <div class="words">
+          a : .-<br />
+          b : -...<br />
+          c : -.-.<br />
+          d : -..<br />
+          e : .<br />
+          f : ..-.<br />
+          g : --.<br />
+          h : ....<br />
+          i : ..<br />
+          j : .---<br />
+          k : -.-<br />
+          l : .-..<br />
+          m : --<br />
+          n : -.<br />
+          o : ---<br />
+          p : .--.<br />
+          q : --.-<br />
+          r : .-.<br />
+          s : ...<br />
+          t : -<br />
+          u : ..-<br />
+          v : ...-<br />
+          w : .--<br />
+          x : -..-<br />
+          y : -.--<br />
+          z : --..<br />
         </div>
 
+        <div class="digits">
+          0 : -----<br />
+          1 : .----<br />
+          2 : ..---<br />
+          3 : ...--<br />
+          4 : ....-<br />
+          5 : .....<br />
+          6 : -....<br />
+          7 : --...<br />
+          8 : ---..<br />
+          9 : ----.<br />
+          . : .-.-.-<br />
+          , : --..--<br />
+          : : ---...<br />
+          ? : ..--..<br />
+          ' : .----.<br />
+          - : -....-<br />
+          / : -..-.<br />
+          " : .-..-.<br />
+          @ : .--.-.<br />
+          = : -...-<br />
+          ! : ---.<br />
+        </div>
+      </div>
     </div>
 
     <!-- <div class="side-bar">
@@ -112,7 +156,7 @@
 
 
     </div> -->
-<script src="app.js"></script>
-<script src="lessons.js"></script>
-</body>
+    <script src="app.js"></script>
+    <script src="lessons.js"></script>
+  </body>
 </html>

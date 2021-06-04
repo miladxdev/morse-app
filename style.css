@@ -13,12 +13,13 @@ body {
   height: 100vh;
   background: #1d1d1d;
   color: #c8c8c8;
+  padding-top: 40px;
   /* color: red; */
   /* text-shadow: 1px 1px 10px red; */
   line-height: 1.2em;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: center; */
   font-family: "Courier New", Courier, monospace;
 }
 
@@ -32,10 +33,10 @@ h3 {
 }
 .morse {
   position: relative;
-  width: 500px;
+  width: 450px;
   height: 650px;
   padding: 0 30px;
-  border-radius: 10px;
+  border-radius: 20px;
   background: #121212;
   /* color: lime; */
   /* text-shadow: 0 0 8px lime, 0 0 4px lime; */
@@ -48,20 +49,6 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-input#level {
-  appearance: none;
-  width: 100%;
-  height: 4px;
-  background: grey;
-}
-input#level::-webkit-slider-thumb {
-  appearance: none;
-  width: 14px;
-  height: 14px;
-  background: grey;
-  border-radius: 50%;
 }
 
 #morse-screen {
@@ -85,7 +72,6 @@ input#level::-webkit-slider-thumb {
   height: 200px;
   padding: 10px;
   border-radius: 10px;
-  /* background: linear-gradient(145deg, #2d2d2d, #232323); */
   background: linear-gradient(145deg, #242424, #1a1a1a);
   text-shadow: none;
   box-shadow: 5px 5px 0px #121212, -5px -5px 0px #121212;
@@ -152,39 +138,37 @@ input#level::-webkit-slider-thumb {
   background: #252525;
 }
 
-.alphabet,
-.num-alphabet {
-  position: absolute;
-  top: 0;
-  right: -180px;
-  width: 150px;
+.alphabet {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 22px;
+}
+.cheat-code {
+  position: relative;
+  width: 300px;
   height: 650px;
+  /* height: 100px; */
   padding: 20px;
   margin-top: 0;
   border-radius: 10px;
-  font-size: 16px;
-  line-height: 22px;
   background: #121212;
-  overflow-y: scroll;
-  transition: 0.5s;
-  z-index: -1;
-  /* overflow: hidden; */
+  /* border: 1px solid lightsalmon; */
+
+  overflow: hidden;
+  transition: 0.4s;
 }
-.num {
-  position: absolute;
-  top: 0;
-  left: -180px;
+.cheat-code .title {
+  margin-bottom: 20px;
 }
-.alphabet::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 10px;
+.words {
+  width: 100%;
+  /* border: 2px solid yellow; */
 }
-.alphabet::-webkit-scrollbar-thumb {
-  background: #161616;
-  cursor: pointer;
-}
-.alphabet::-webkit-scrollbar-thumb:hover {
-  background: #202020;
+.digits {
+  width: 100%;
+  /* border: 2px solid blue; */
 }
 
 .side-bar {
