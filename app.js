@@ -133,7 +133,7 @@ deleteBtn.addEventListener("mouseup", function() {
 const settingsSec = document.querySelector('.settings');
 const settingBtn = document.querySelector('#set-btn');
 
-var toggle = false;
+var toggle = true;
 settingBtn.addEventListener('click', () => {
     if (!toggle) {
         settingsSec.style.height = '57px';

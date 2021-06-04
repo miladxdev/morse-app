@@ -3,7 +3,9 @@ $midBG: #1a1a1a;
 $lightBG: #393939;
 
 $toggle_light_bg: #e3e3e3;
-$toggle_dark_bg: #c7c7c7;
+$toggle_dark_bg: #b8b8b8;
+
+$muted_text: #656565;
 @mixin center($dir) {
   display: flex;
   justify-content: space-between;
@@ -13,8 +15,6 @@ $toggle_dark_bg: #c7c7c7;
 
 .settings {
   position: relative;
-  @include center(column);
-  align-items: unset;
   background: $darkBG;
   width: 300px;
   height: 650px;
@@ -24,8 +24,16 @@ $toggle_dark_bg: #c7c7c7;
   .title {
     margin-bottom: 20px;
   }
+  .set-container {
+    padding: 15px 0;
+  }
   .set {
     @include center(row);
+    padding: 10px 0;
+  }
+  .set-info {
+    font-size: 14px;
+    color: $muted_text;
   }
   transition: height 0.4s;
 }
