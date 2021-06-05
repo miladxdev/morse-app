@@ -24,46 +24,34 @@ let deleteBtn = document.getElementById("delete-btn");
 let morseScreen = document.getElementById("morse-screen");
 let textScreen = document.getElementById("text-screen");
 let text = document.getElementById("text");
+
 // functions
-function getMorseScreen() {
-    return morseScreen.innerText;
-}
-function setMorseScreen(m) {
-    morseScreen.innerText += m;
-}
-function clrMorseScreen() {
-    morseScreen.innerText = '';
-}
-function getTextScreen() {
-    return text.innerText;
-}
-function setTextScreen(t) {
-    text.innerHTML += t;
-}
-function clrTextScreen() {
-    text.innerText = '';
-}
+getMorseScreen = () => morseScreen.innerText;
+
+setMorseScreen = (m) => morseScreen.innerText += m;
+
+clrMorseScreen = () => morseScreen.innerText = '';
+
+getTextScreen = () => text.innerText;
+
+setTextScreen = (t) => text.innerHTML += t;
+
+clrTextScreen = () => text.innerText = '';
 
 let flag1, flag2;
 
 // ...morse button mousedown event
-morseBtn.addEventListener("mousedown", function() {
-    
+morseBtn.addEventListener("mousedown", () => {
     beep.play();
-    
     flag1 = new Date().getTime();
-
     if(isMoueUp) {
         clearTimeout(mt);
         clearTimeout(st);
     } 
-    // style
-    this.style.width = "90px";
-    this.style.height = "90px";
 });
 
 // ..morse button mouseup even
-morseBtn.addEventListener("mouseup", function() {
+morseBtn.addEventListener("mouseup", () => {
     beep.pause();
     beep.currentTime = 0.1;
     flag2 = new Date().getTime();
@@ -79,7 +67,7 @@ morseBtn.addEventListener("mouseup", function() {
         if (morseAlph.includes(getMorseScreen())) {
 
             setTextScreen(alph[index]);
-            st = setTimeout(() => { setTextScreen('&nbsp;');}, 7*ping ); // blank space
+            st = setTimeout(() => { setTextScreen('&nbsp;');}, 7*ping ); // prin blank space
             checkAnswer();
                
         }
@@ -96,7 +84,7 @@ morseBtn.addEventListener("mouseup", function() {
 
 
 // ..clear button events
-clearBtn.addEventListener("mousedown", function() {
+clearBtn.addEventListener("mousedown", () => {
     text.innerText = '';
     clearTimeout(st);
     // style
@@ -104,7 +92,7 @@ clearBtn.addEventListener("mousedown", function() {
     this.style.height = "45px";
 });
 
-clearBtn.addEventListener("mouseup", function() {
+clearBtn.addEventListener("mouseup", () => {
     // style
     this.style.width = "50px";
     this.style.height = "50px";
@@ -112,22 +100,13 @@ clearBtn.addEventListener("mouseup", function() {
 
 
 // ..delete button events
-deleteBtn.addEventListener("mousedown", function() {
+deleteBtn.addEventListener("mousedown", () => {
     let text = getTextScreen();
     text = text.slice(0, -1);
     clrTextScreen();
     setTextScreen(text);
-    // style
-    this.style.width = "45px";
-    this.style.height = "45px";
+    clearTimeout(st);
 });
-
-deleteBtn.addEventListener("mouseup", function() {
-    // style
-    this.style.width = "50px";
-    this.style.height = "50px";
-});
-
 
 // show hide alphabet
 const settingsSec = document.querySelector('.settings');
@@ -146,6 +125,8 @@ settingBtn.addEventListener('click', () => {
     }
 });
 
+
+// toggle cheat code
 const cheatCodeSec = document.querySelector('.cheat-code');
 const cheatBtn = document.querySelector('#cheat-btn');
 cheatBtn.addEventListener('click', () => {
