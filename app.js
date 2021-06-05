@@ -23,7 +23,7 @@ let clearBtn = document.getElementById("clear-btn");
 let deleteBtn = document.getElementById("delete-btn");
 let morseScreen = document.getElementById("morse-screen");
 let textScreen = document.getElementById("text-screen");
-
+let text = document.getElementById("text");
 // functions
 function getMorseScreen() {
     return morseScreen.innerText;
@@ -35,13 +35,13 @@ function clrMorseScreen() {
     morseScreen.innerText = '';
 }
 function getTextScreen() {
-    return textScreen.innerText;
+    return text.innerText;
 }
 function setTextScreen(t) {
-    textScreen.innerHTML += t;
+    text.innerHTML += t;
 }
 function clrTextScreen() {
-    textScreen.innerText = '';
+    text.innerText = '';
 }
 
 let flag1, flag2;
@@ -97,7 +97,7 @@ morseBtn.addEventListener("mouseup", function() {
 
 // ..clear button events
 clearBtn.addEventListener("mousedown", function() {
-    textScreen.innerText = '';
+    text.innerText = '';
     clearTimeout(st);
     // style
     this.style.width = "45px";
@@ -135,11 +135,13 @@ const settingBtn = document.querySelector('#set-btn');
 
 var toggle = true;
 settingBtn.addEventListener('click', () => {
-    if (!toggle) {
-        settingsSec.style.height = '57px';
+    if (settingsSec.style.height == '650px') {
+        settingsSec.style.height = '0';
+        settingsSec.style.opacity = '0';
         toggle = !toggle;
     } else {
         settingsSec.style.height = '650px';
+        settingsSec.style.opacity = '1';
         toggle = !toggle;
     }
 });
@@ -147,11 +149,13 @@ settingBtn.addEventListener('click', () => {
 const cheatCodeSec = document.querySelector('.cheat-code');
 const cheatBtn = document.querySelector('#cheat-btn');
 cheatBtn.addEventListener('click', () => {
-    if (!toggle) {
-        cheatCodeSec.style.height = '57px';
+    if (cheatCodeSec.style.height == '650px') {
+        cheatCodeSec.style.height = '0';
+        cheatCodeSec.style.opacity = '0';
         toggle = !toggle;
     } else {
         cheatCodeSec.style.height = '650px';
+        cheatCodeSec.style.opacity = '1';
         toggle = !toggle;
     }
 });

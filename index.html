@@ -16,7 +16,6 @@
   </head>
   <body>
     <div class="settings">
-      <div class="icon" id="set-btn"><i class="fa fa-cog"></i></div>
       <h3 class="title">Settings</h3>
       <div class="set-container">
         <div class="set">
@@ -72,13 +71,15 @@
 
     <div class="morse">
       <div class="status-bar">
-        <div id="try"></div>
-        <!-- <input type="range" name="level" id="level" min='0' max='100'> -->
-        <div id="score">score: 0</div>
+        <!-- <div id="try"></div>
+        <div id="score">score: 0</div> -->
+        <div class="icon" id="set-btn"><i class="fa fa-cog"></i></div>
+
+        <div class="icon" id="cheat-btn"><i class="fa fa-code"></i></div>
       </div>
       <div id="morse-screen"></div>
 
-      <div id="text-screen"></div>
+      <div id="text-screen"><span id="text"></span></div>
 
       <div class="buttons">
         <div id="clear-btn">C</div>
@@ -88,7 +89,6 @@
     </div>
 
     <div class="cheat-code">
-      <div class="icon" id="cheat-btn"><i class="fa fa-code"></i></div>
       <h3 class="title">Cheat code</h3>
       <div class="alphabet">
         <div class="words">
@@ -172,6 +172,6 @@
 
     </div> -->
     <script src="app.js"></script>
-    <script src="lessons.js"></script>
+    <script src="js/lessons.js"></script>
   </body>
 </html>

@@ -1,45 +1,3 @@
-.settings {
-  position: relative;
-  background: #121212;
-  width: 300px;
-  height: 650px;
-  padding: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  -webkit-transition: height 0.4s;
-  transition: height 0.4s;
-}
-
-.settings .title {
-  margin-bottom: 20px;
-}
-
-.settings .set-container {
-  padding: 15px 0;
-}
-
-.settings .set {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  padding: 10px 0;
-}
-
-.settings .set-info {
-  font-size: 14px;
-  color: #656565;
-}
-
 .toggle {
   position: relative;
   display: inline-block;
@@ -114,17 +72,57 @@ input:checked + .slider::before {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: #393939;
+  background: #1a1a1a;
   cursor: pointer;
 }
 
 .icon:hover {
   background: #393939;
+}
+
+.settings {
+  opacity: 0;
+  position: relative;
+  background: #121212;
+  width: 300px;
+  height: 650px;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.settings .title {
+  margin-bottom: 20px;
+}
+
+.settings .set-container {
+  padding: 15px 0;
+}
+
+.settings .set {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 10px 0;
+}
+
+.settings .set-info {
+  font-size: 14px;
+  color: #656565;
 }
 /*# sourceMappingURL=main.css.map */
