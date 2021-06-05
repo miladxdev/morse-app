@@ -60,9 +60,13 @@ input:checked + .slider::before {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #1a1a1a;
+  background: #151515;
   cursor: pointer;
+  color: grey;
+  transition: background 0.3s;
+  transition: color 0.2s;
   &:hover {
-    background: $lightBG;
+    color: #fafafa;
+    background: $midBG;
   }
 }

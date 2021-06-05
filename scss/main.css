@@ -75,12 +75,18 @@ input:checked + .slider::before {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #1a1a1a;
+  background: #151515;
   cursor: pointer;
+  color: grey;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
 }
 
 .icon:hover {
-  background: #393939;
+  color: #fafafa;
+  background: #1a1a1a;
 }
 
 .settings {

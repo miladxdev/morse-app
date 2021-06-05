@@ -1,3 +1,4 @@
+
 const morseAlph = [
     ".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",
     ".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",
@@ -24,6 +25,8 @@ let deleteBtn = document.getElementById("delete-btn");
 let morseScreen = document.getElementById("morse-screen");
 let textScreen = document.getElementById("text-screen");
 let text = document.getElementById("text");
+let lowerCheckbox = document.querySelector("#lowercase");
+
 
 // functions
 getMorseScreen = () => morseScreen.innerText;
@@ -34,7 +37,7 @@ clrMorseScreen = () => morseScreen.innerText = '';
 
 getTextScreen = () => text.innerText;
 
-setTextScreen = (t) => text.innerHTML += t;
+setTextScreen = (t) => text.innerHTML += t;    
 
 clrTextScreen = () => text.innerText = '';
 
@@ -66,8 +69,8 @@ morseBtn.addEventListener("mouseup", () => {
         let index = morseAlph.indexOf(getMorseScreen());
         if (morseAlph.includes(getMorseScreen())) {
 
-            setTextScreen(alph[index]);
-            st = setTimeout(() => { setTextScreen('&nbsp;');}, 7*ping ); // prin blank space
+            setTextScreen(lowerCheckbox.checked ? alph[index].toLowerCase() : alph[index].toUpperCase());
+            st = setTimeout(() => {setTextScreen('&nbsp;');}, 7*ping ); // prin blank space
             checkAnswer();
                
         }
@@ -76,9 +79,6 @@ morseBtn.addEventListener("mouseup", () => {
     }, 3*ping);
     
     isMoueUp = true;
-    // style
-    this.style.width = "100px";
-    this.style.height = "100px";
     
 });
 
@@ -87,16 +87,8 @@ morseBtn.addEventListener("mouseup", () => {
 clearBtn.addEventListener("mousedown", () => {
     text.innerText = '';
     clearTimeout(st);
-    // style
-    this.style.width = "45px";
-    this.style.height = "45px";
 });
 
-clearBtn.addEventListener("mouseup", () => {
-    // style
-    this.style.width = "50px";
-    this.style.height = "50px";
-});
 
 
 // ..delete button events
