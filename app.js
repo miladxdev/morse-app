@@ -26,7 +26,7 @@ let morseScreen = document.getElementById("morse-screen");
 let textScreen = document.getElementById("text-screen");
 let text = document.getElementById("text");
 let lowerCheckbox = document.querySelector("#lowercase");
-
+let muteCheckbox = document.querySelector("#mute");
 
 // functions
 getMorseScreen = () => morseScreen.innerText;
@@ -46,6 +46,7 @@ let flag1, flag2;
 // ...morse button mousedown event
 morseBtn.addEventListener("mousedown", () => {
     beep.play();
+    beep.volume = muteCheckbox.checked ? 0 : 1;
     flag1 = new Date().getTime();
     if(isMoueUp) {
         clearTimeout(mt);
