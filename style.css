@@ -5,22 +5,16 @@
   padding: 0;
 }
 
-img {
-  filter: invert();
-}
-
 body {
   height: 100vh;
   background: #1a1a1a;
   color: #c8c8c8;
-  padding-top: 40px;
-  /* color: red; */
-  /* text-shadow: 1px 1px 10px red; */
   line-height: 1.2em;
   display: flex;
-  justify-content: space-around;
-  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
   font-family: "Courier New", Courier, monospace;
+  overflow: hidden;
 }
 
 h2,
@@ -55,11 +49,8 @@ h3 {
   height: 140px;
   padding: 18px;
   border-radius: 10px;
-  /* background: #191919; */
-
   background: linear-gradient(145deg, #242424, #1a1a1a);
   box-shadow: 0px 0px 8px rgba(18, 18, 18, 0.2);
-
   font-size: 80px;
   text-align: left;
   line-height: 4rem;
@@ -77,10 +68,8 @@ h3 {
   box-shadow: 5px 5px 0px #121212, -5px -5px 0px #121212;
   font-size: 20px;
   word-wrap: break-word;
-  /* text-transform: capitalize; */
 }
 #text {
-  /* border: 1px solid red; */
   animation: blink-caret 0.8s infinite;
   line-height: 1.5rem;
 }
@@ -100,8 +89,6 @@ h3 {
   box-shadow: inset 0 0 2px grey;
   cursor: pointer;
   transition: 0.1s ease-out;
-  /* -webkit-animation: flicker 4s ease infinite;
-    animation: flicker 4s ease infinite; */
 }
 
 #clear-btn {
@@ -147,67 +134,16 @@ h3 {
 #delete-btn:active {
   background-color: rgb(160, 160, 160);
 }
-.alphabet {
-  /* border: 1px solid red; */
-  display: flex;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 22px;
-}
-.cheat-code {
-  opacity: 0;
-  position: relative;
-  width: 300px;
-  height: 650px;
-  /* height: 100px; */
-  padding: 20px;
-  margin-top: 0;
-  border-radius: 10px;
-  background: #121212;
-  /* border: 1px solid lightsalmon; */
-
-  overflow: hidden;
-  transition: 0.4s;
-}
-.cheat-code .title {
-  margin-bottom: 20px;
-}
-.words {
-  width: 120%;
-  /* border: 2px solid yellow; */
-}
-.digits {
-  width: 80%;
-  /* border: 2px solid blue; */
-}
-
-.side-bar {
-  height: 650px;
-}
-.card {
-  width: 270px;
-  padding: 20px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  font-size: 14px;
-  background: #121212;
-  transition: box-shadow 0.5s;
-}
-.card:hover {
-  box-shadow: 0 0 10px #121212;
-}
-.card .social {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 20px;
-}
-.social img {
-  width: 40px;
-  opacity: 0.6;
-}
 
 @-webkit-keyframes blink-caret {
+  0% {
+    border-right: 1px solid grey;
+  }
+  100% {
+    border-right: 1px solid rgba(255, 255, 255, 0);
+  }
+}
+@keyframes blink-caret {
   0% {
     border-right: 1px solid grey;
   }
