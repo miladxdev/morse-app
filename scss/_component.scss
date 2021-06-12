@@ -67,3 +67,27 @@
     color: #fafafa;
   }
 }
+.practice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  // border: 1px solid blue;
+  .level {
+    width: 200px;
+    height: 4px;
+    background: rgb(79, 79, 79);
+    border-radius: 4px;
+    overflow: hidden;
+
+    .xp {
+      width: 0%;
+      height: 100%;
+      background: lightgrey;
+      transition: width 0.5s;
+    }
+  }
+  .score {
+    float: right;
+  }
+}
