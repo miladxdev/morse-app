@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/faveicon.png" type="image/x-icon" />
+    <!-- style files -->
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="scss/main.css" />
+    <!-- fontawesome CDN -->
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -14,10 +17,12 @@
     />
     <title>morse app</title>
   </head>
+
   <body>
     <div class="morse">
       <div class="settings">
         <h3 class="title">Settings</h3>
+
         <div class="set-container">
           <div class="set">
             <span>Show alphabet</span>
@@ -28,26 +33,18 @@
           </div>
           <div class="set-info">you can turn on/off morse cheat code</div>
         </div>
+
         <div class="set-container">
           <div class="set">
             <span>Training mode</span>
             <label class="toggle">
-              <input type="checkbox" checked="checked" />
+              <input id="training" type="checkbox" checked="checked" />
               <span class="slider round"></span>
             </label>
           </div>
           <div class="set-info">in training mode you cant practice morse and get score</div>
         </div>
-        <div class="set-container">
-          <div class="set">
-            <span>Light mode</span>
-            <label class="toggle">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
-          </div>
-          <div class="set-info">turn on/off light mode but watch out for your eyes</div>
-        </div>
+
         <div class="set-container">
           <div class="set">
             <span>Mute</span>
@@ -58,6 +55,7 @@
           </div>
           <div class="set-info">if you tired of the bip sound you can mute.</div>
         </div>
+
         <div class="set-container">
           <div class="set">
             <span>Lowercase</span>
@@ -67,6 +65,20 @@
             </label>
           </div>
           <div class="set-info">change text screen to be lowercase or uppercase</div>
+        </div>
+
+        <div class="set-container">
+          <div class="set">
+            <span>Theme</span>
+          </div>
+          <div class="set-info">
+            <div class="scheme">
+              <div id="dark" class="theme"></div>
+              <div id="ocean" class="theme"></div>
+              <div id="light" class="theme"></div>
+              <div id="purple" class="theme"></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -89,9 +101,9 @@
       </div>
 
       <div class="buttons">
-        <div id="clear-btn">C</div>
+        <div id="clear-btn"><i class="fa fa-arrow-left"></i></div>
         <div id="morse-btn"></div>
-        <div id="delete-btn">CE</div>
+        <div id="delete-btn"><i class="fa fa-undo"></i></div>
       </div>
 
       <div class="cheat-code">

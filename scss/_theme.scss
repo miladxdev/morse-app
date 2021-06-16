@@ -1,0 +1,27 @@
+[data-theme="dark"] {
+  --body-bg: hsl(0, 0%, 10%);
+  --text-color: hsl(0%, 0%, 60%);
+  --text-muted: hsl(0, 0, 50%);
+  --component-bg: hsl(0, 0%, 7%);
+  --screen-bg: linear-gradient(145deg, hsl(0, 0%, 14%), hsl(0, 0%, 10%));
+  --btn-bg: hsl(0, 0%, 13%);
+  --btn-hover-bg: hsl(0, 0%, 15%);
+  --toggle-on-bg: hsl(0, 0%, 22%);
+  --toggle-off-bg: hsl(0, 0%, 10%);
+  --toggle-thumb-on: hsl(0, 0%, 80%);
+  --toggle-thumb-off: hsl(0, 0%, 40%);
+}
+
+[data-theme="ocean"] {
+  --body-bg: hsl(215, 13%, 18%);
+  --text-color: hsl(215, 13%, 95%);
+  --text-muted: hsl(215, 13%, 60%);
+  --component-bg: hsl(215, 13%, 15%);
+  --screen-bg: linear-gradient(145deg, hsl(215, 13%, 22%), hsl(215, 13%, 18%));
+  --btn-bg: hsl(215, 13%, 21%);
+  --btn-hover-bg: hsl(215, 13%, 23%);
+  --toggle-on-bg: hsl(215, 13%, 30%);
+  --toggle-off-bg: hsl(215, 13%, 18%);
+  --toggle-thumb-on: hsl(215, 13%, 80%);
+  --toggle-thumb-off: hsl(215, 13%, 40%);
+}
