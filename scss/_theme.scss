@@ -10,6 +10,7 @@
   --toggle-off-bg: hsl(0, 0%, 10%);
   --toggle-thumb-on: hsl(0, 0%, 80%);
   --toggle-thumb-off: hsl(0, 0%, 40%);
+  --icon-hover-bg: hsl(0, 0%, 18%);
 }
 
 [data-theme="ocean"] {
@@ -24,4 +25,5 @@
   --toggle-off-bg: hsl(215, 13%, 18%);
   --toggle-thumb-on: hsl(215, 13%, 80%);
   --toggle-thumb-off: hsl(215, 13%, 40%);
+  --icon-hover-bg: hsl(215, 13%, 18%);
 }

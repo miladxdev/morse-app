@@ -24,11 +24,10 @@ body {
   padding: 20px;
   border-radius: 20px;
   background: var(--component-bg);
-  box-shadow: 0 0 20px var(--component-bg);
+  box-shadow: 0 0 16px var(--component-bg);
   user-select: none;
 
   .status-bar {
-    /* border: 1px solid red; */
     display: flex;
     justify-content: space-between;
     align-items: center;

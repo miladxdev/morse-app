@@ -1,8 +1,6 @@
 $darkBG: #121212;
-$midBG: #1a1a1a;
+$midBG: hsl(0, 0%, 10%);
 $lightBG: #393939;
-
-$text-muted: #7e7e7e;
 
 @mixin center($dir) {
   display: flex;

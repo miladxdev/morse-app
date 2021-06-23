@@ -18,6 +18,8 @@ function checkAnswer() {
   if (trainingCheckbox.checked) {
     if (getTextScreen() == randomWord) {
       score += 5;
+      localStorage.setItem("score", score);
+
       words = Math.floor(score / 100) + 1;
       // console.log(words);
       randomWord = "";
@@ -27,14 +29,14 @@ function checkAnswer() {
         randomWord += alph[Math.floor(Math.random() * 26)];
       }
 
-      tryElement.style.color = "lime";
-      scoreElement.style.color = "lime";
+      // tryElement.style.color = "lime";
+      // scoreElement.style.color = "lime";
       xpElem.style.width = score + "%";
 
       setTimeout(function () {
         tryElement.innerHTML = randomWord;
-        scoreElement.style.color = "#c8c8c8";
-        tryElement.style.color = "#c8c8c8";
+        // scoreElement.style.color = "#c8c8c8";
+        // tryElement.style.color = "#c8c8c8";
         clrTextScreen();
       }, 2000);
     }

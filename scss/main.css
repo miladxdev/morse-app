@@ -10,6 +10,7 @@
   --toggle-off-bg: hsl(0, 0%, 10%);
   --toggle-thumb-on: hsl(0, 0%, 80%);
   --toggle-thumb-off: hsl(0, 0%, 40%);
+  --icon-hover-bg: hsl(0, 0%, 18%);
 }
 
 [data-theme="ocean"] {
@@ -24,6 +25,7 @@
   --toggle-off-bg: hsl(215, 13%, 18%);
   --toggle-thumb-on: hsl(215, 13%, 80%);
   --toggle-thumb-off: hsl(215, 13%, 40%);
+  --icon-hover-bg: hsl(215, 13%, 18%);
 }
 
 .toggle {
@@ -110,7 +112,7 @@
 }
 
 .icon:hover {
-  background: #1a1a1a;
+  background: var(--icon-hover-bg);
 }
 
 .icon:active {
@@ -118,20 +120,11 @@
 }
 
 .practice {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-top: 4px;
 }
 
 .practice .level {
-  width: 200px;
+  width: 100%;
   height: 4px;
   background: #4f4f4f;
   border-radius: 4px;
@@ -146,8 +139,12 @@
   transition: width 0.5s;
 }
 
-.practice .score {
-  float: right;
+.practice #try {
+  padding: 2px;
+}
+
+.practice #score {
+  padding: 4px 2px;
 }
 
 .scheme {
@@ -171,7 +168,19 @@
   height: 30px;
   margin-top: 10px;
   border-radius: 50%;
-  border: 2px solid grey;
+  border: 2px solid #4d4d4d;
+  cursor: pointer;
+  -webkit-transition: border 0.1s;
+  transition: border 0.1s;
+}
+
+.scheme .theme:hover {
+  border: 2px solid #999999;
+}
+
+.scheme .theme:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 .scheme #dark {
@@ -217,8 +226,8 @@ body {
   padding: 20px;
   border-radius: 20px;
   background: var(--component-bg);
-  -webkit-box-shadow: 0 0 20px var(--component-bg);
-          box-shadow: 0 0 20px var(--component-bg);
+  -webkit-box-shadow: 0 0 16px var(--component-bg);
+          box-shadow: 0 0 16px var(--component-bg);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -226,7 +235,6 @@ body {
 }
 
 .morse .status-bar {
-  /* border: 1px solid red; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
