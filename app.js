@@ -153,8 +153,8 @@ morseBtn.addEventListener("mouseup", () => {
     if (morseAlph.includes(getMorseScreen())) {
       setTextScreen(lowerCheckbox.checked ? alph[index].toLowerCase() : alph[index].toUpperCase());
       st = setTimeout(() => {
-        setTextScreen("&nbsp;");
-      }, 7 * ping); // prin blank space
+        setTextScreen("&nbsp;"); // print blank space
+      }, 7 * ping);
       checkAnswer();
     }
 
@@ -179,7 +179,7 @@ deleteBtn.addEventListener("mousedown", () => {
   clearTimeout(st);
 });
 
-// show hide alphabet
+// toggle alphabet
 const settingsSec = document.querySelector(".settings");
 const settingBtn = document.querySelector("#set-btn");
 var toggle = true;

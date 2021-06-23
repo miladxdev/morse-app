@@ -127,6 +127,8 @@
 .practice {
   margin-top: 4px;
   opacity: 0.8;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
 }
 
 .practice .level {
@@ -198,57 +200,6 @@
   background: #282d34;
 }
 
-/*
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  margin: 20px;
-  .checkbox {
-    opacity: 0;
-    width: 0;
-    height: 0;
-    &:checked + .switch-btn {
-      background-color: lightgrey;
-      // box-shadow: 0 0 8px 0 lightgreen;
-    }
-    &:checked + .switch-btn::before {
-      left: calc(100% - 4px);
-      transform: translateX(-100%);
-    }
-  }
-  .switch-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #b6b4b4;
-    cursor: pointer;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    &::before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background-color: #fafafa;
-      transition: 0.4s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
-    }
-    &:active:before {
-      width: 40px;
-    }
-    &.round,
-    &.round:before {
-      border-radius: 30px;
-    }
-  }
-}
-
-*/
 body {
   height: 100vh;
   background: var(--body-bg);

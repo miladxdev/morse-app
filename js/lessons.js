@@ -1,3 +1,4 @@
+let practiceElem = document.querySelector(".practice");
 let tryElement = document.getElementById("try");
 let scoreElement = document.getElementById("score");
 let xpElem = document.querySelector(".xp");
@@ -8,10 +9,10 @@ let randomWord = "";
 let words = 1;
 let temp = "";
 
-console.log(trainingCheckbox.checked);
 for (let i = 0; i < words; i++) {
   randomWord += alph[Math.floor(Math.random() * 26)];
 }
+
 tryElement.innerHTML = randomWord;
 
 function checkAnswer() {
@@ -21,7 +22,7 @@ function checkAnswer() {
       localStorage.setItem("score", score);
 
       words = Math.floor(score / 100) + 1;
-      // console.log(words);
+
       randomWord = "";
       scoreElement.innerHTML = score;
 
@@ -29,16 +30,21 @@ function checkAnswer() {
         randomWord += alph[Math.floor(Math.random() * 26)];
       }
 
-      // tryElement.style.color = "lime";
-      // scoreElement.style.color = "lime";
       xpElem.style.width = (score % 100) + "%";
 
       setTimeout(function () {
         tryElement.innerHTML = randomWord;
-        // scoreElement.style.color = "#c8c8c8";
-        // tryElement.style.color = "#c8c8c8";
         clrTextScreen();
       }, 2000);
     }
   }
 }
+
+// toggle practice opacity
+trainingCheckbox.addEventListener("change", function () {
+  if (this.checked) {
+    practiceElem.style.opacity = "0.8";
+  } else {
+    practiceElem.style.opacity = "0.1";
+  }
+});
