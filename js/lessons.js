@@ -31,7 +31,7 @@ function checkAnswer() {
 
       // tryElement.style.color = "lime";
       // scoreElement.style.color = "lime";
-      xpElem.style.width = score + "%";
+      xpElem.style.width = (score % 100) + "%";
 
       setTimeout(function () {
         tryElement.innerHTML = randomWord;
