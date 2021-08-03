@@ -146,7 +146,7 @@ body {
   .set-container {
     padding: 15px 0;
     .set {
-      @include center(row);
+      @include flex(space-between, center);
       padding: 10px 0;
     }
 

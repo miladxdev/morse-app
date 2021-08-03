@@ -37,11 +37,7 @@
       left: 4px;
       bottom: 3px;
       background-color: var(--toggle-thumb-off);
-      transition: 0.5s cubic-bezier(0.18, 0.89, 0.35, 1.2) all;
-    }
-
-    &:active:before {
-      width: 30px;
+      transition: 0.4s ease all, left 0.4s cubic-bezier(0.18, 0.89, 0.35, 1.15);
     }
 
     &.round {
@@ -54,8 +50,7 @@
 }
 
 .icon {
-  @include center(row);
-  justify-content: center;
+  @include flex(center, center);
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -87,7 +82,7 @@
     .xp {
       width: 0%;
       height: 100%;
-      background-image: linear-gradient(90deg, hsl(0, 0%, 70%), hsl(0, 0%, 90%));
+      background-image: linear-gradient(90deg, #999999, hsl(0, 0%, 90%));
       transition: width 0.5s;
     }
   }
@@ -102,7 +97,7 @@
 }
 
 .scheme {
-  @include center(row);
+  @include flex(space-between, center);
 
   .theme {
     width: 30px;
