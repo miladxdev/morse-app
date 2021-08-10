@@ -1,101 +1,22 @@
+// prettier-ignore
 const morseAlph = [
-  ".-",
-  "-...",
-  "-.-.",
-  "-..",
-  ".",
-  "..-.",
-  "--.",
-  "....",
-  "..",
-  ".---",
-  "-.-",
-  ".-..",
-  "--",
-  "-.",
-  "---",
-  ".--.",
-  "--.-",
-  ".-.",
-  "...",
-  "-",
-  "..-",
-  "...-",
-  ".--",
-  "-..-",
-  "-.--",
-  "--..",
-  "-----",
-  ".----",
-  "..---",
-  "...--",
-  "....-",
-  ".....",
-  "-....",
-  "--...",
-  "---..",
-  "----.",
-  ".-.-.-",
-  "--..--",
-  "---...",
-  "..--..",
-  ".----.",
-  "-....-",
-  "-..-.",
-  ".-..-.",
-  ".--.-.",
-  "-...-",
-  "---.",
+  ".-", "-...", "-.-.", "-..", ".", "..-.","--.",
+  "....", "..", ".---", "-.-", ".-..","--", "-.",
+  "---", ".--.", "--.-", ".-.", "...", "-", "..-",
+  "...-", ".--", "-..-", "-.--", "--..", "-----",
+  ".----", "..---", "...--", "....-", ".....",
+  "-....", "--...", "---..", "----.", ".-.-.-",
+  "--..--", "---...", "..--..", ".----.", "-....-",
+  "-..-.",".-..-.",".--.-.","-...-","---.",
 ];
-
+// prettier-ignore
 const alph = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-  "0",
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  ".",
-  ",",
-  ":",
-  "?",
-  "'",
-  "-",
-  "/",
-  '"',
-  "@",
-  "=",
-  "!",
+  "A", "B", "C", "D", "E", "F", "G", "H",
+  "I", "J", "K", "L", "M", "N", "O", "P",
+  "Q", "R", "S", "T", "U", "V", "W", "X",
+  "Y", "Z", "0", "1", "2", "3", "4", "5",
+  "6", "7", "8", "9", ".", ",", ":", "?",
+  "'", "-", "/", '"', "@", "=", "!",
 ];
 
 const beep = new Audio("snd/beep.wav");
@@ -103,14 +24,14 @@ let isMoueUp = false;
 let ping = 150;
 
 // DOM
-let morseBtn = document.getElementById("morse-btn");
-let clearBtn = document.getElementById("clear-btn");
-let deleteBtn = document.getElementById("delete-btn");
-let morseScreen = document.getElementById("morse-screen");
-let textScreen = document.getElementById("text-screen");
-let text = document.getElementById("text");
-let lowerCheckbox = document.querySelector("#lowercase");
-let muteCheckbox = document.querySelector("#mute");
+const selectElem = (e) => document.querySelector(e);
+
+let morseScreen = selectElem("#morse-screen");
+// let textScreen = selectElem("#text-screen");
+
+let text = selectElem("#text");
+let lowerCaseCheckbox = selectElem("#lowercase");
+let muteCheckbox = selectElem("#mute");
 
 // functions
 getMorseScreen = () => morseScreen.innerText;
@@ -126,17 +47,16 @@ setTextScreen = (t) => (text.innerHTML += t);
 clrTextScreen = () => (text.innerText = "");
 
 let flag1, flag2, mt, st;
-// ...morse button mousedown event
-morseBtn.addEventListener("mousedown", () => {
+
+function stage1() {
   beep.play();
   beep.volume = muteCheckbox.checked ? 0 : 1;
   flag1 = new Date().getTime();
   clearTimeout(mt);
   clearTimeout(st);
-});
+}
 
-// ..morse button mouseup even
-morseBtn.addEventListener("mouseup", () => {
+function stage2() {
   beep.pause();
   beep.currentTime = 0.1;
   flag2 = new Date().getTime();
@@ -151,7 +71,7 @@ morseBtn.addEventListener("mouseup", () => {
     // translate morse
     let index = morseAlph.indexOf(getMorseScreen());
     if (morseAlph.includes(getMorseScreen())) {
-      setTextScreen(lowerCheckbox.checked ? alph[index].toLowerCase() : alph[index].toUpperCase());
+      setTextScreen(lowerCaseCheckbox.checked ? alph[index].toLowerCase() : alph[index].toUpperCase());
       st = setTimeout(() => {
         setTextScreen("&nbsp;"); // print blank space
       }, 7 * ping);
@@ -162,16 +82,29 @@ morseBtn.addEventListener("mouseup", () => {
   }, 3 * ping);
 
   isMoueUp = true;
+}
+// ...morse button mousedown event
+selectElem("#morse-btn").addEventListener("mousedown", stage1);
+
+// ...morse button mouseup event
+selectElem("#morse-btn").addEventListener("mouseup", stage2);
+
+document.body.addEventListener("keydown", (e) => {
+  if (e.code === "Numpad0") stage1();
+});
+
+document.body.addEventListener("keyup", (e) => {
+  if (e.code === "Numpad0") stage2();
 });
 
 // ..clear button events
-clearBtn.addEventListener("mousedown", () => {
+selectElem("#clear-btn").addEventListener("mousedown", () => {
   text.innerText = "";
   clearTimeout(st);
 });
 
 // ..delete button events
-deleteBtn.addEventListener("mousedown", () => {
+selectElem("#delete-btn").addEventListener("mousedown", () => {
   let text = getTextScreen();
   text = text.slice(0, -1);
   clrTextScreen();
@@ -179,35 +112,30 @@ deleteBtn.addEventListener("mousedown", () => {
   clearTimeout(st);
 });
 
-// toggle alphabet
-const settingsSec = document.querySelector(".settings");
-const settingBtn = document.querySelector("#set-btn");
-var toggle = true;
+// toggle settings
+const settingsSec = selectElem(".settings");
+const settingBtn = selectElem("#set-btn");
 
 settingBtn.addEventListener("click", () => {
   if (settingsSec.style.height == "650px") {
     settingsSec.style.height = "0";
     settingsSec.style.opacity = "0";
-    toggle = !toggle;
   } else {
     settingsSec.style.height = "650px";
     settingsSec.style.opacity = "1";
-    toggle = !toggle;
   }
 });
 
 // toggle cheat code
-const cheatCodeSec = document.querySelector(".cheat-code");
-const cheatBtn = document.querySelector("#cheat-btn");
+const cheatCodeSec = selectElem(".cheat-code");
+const cheatBtn = selectElem("#cheat-btn");
 
 cheatBtn.addEventListener("click", () => {
   if (cheatCodeSec.style.height == "650px") {
     cheatCodeSec.style.height = "0";
     cheatCodeSec.style.opacity = "0";
-    toggle = !toggle;
   } else {
     cheatCodeSec.style.height = "650px";
     cheatCodeSec.style.opacity = "1";
-    toggle = !toggle;
   }
 });

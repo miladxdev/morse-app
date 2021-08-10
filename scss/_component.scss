@@ -40,6 +40,10 @@
       transition: 0.4s ease all, left 0.4s cubic-bezier(0.18, 0.89, 0.35, 1.15);
     }
 
+    &:active:before {
+      width: 40px;
+    }
+
     &.round {
       border-radius: 30px;
       &:before {
@@ -65,34 +69,6 @@
 
   &:active {
     color: #fafafa;
-  }
-}
-
-.practice {
-  margin-top: 4px;
-  opacity: 0.8;
-  transition: opacity 0.2s;
-  .level {
-    width: 100%;
-    height: 4px;
-    background: rgb(79, 79, 79);
-    border-radius: 4px;
-    overflow: hidden;
-
-    .xp {
-      width: 0%;
-      height: 100%;
-      background-image: linear-gradient(90deg, #999999, hsl(0, 0%, 90%));
-      transition: width 0.5s;
-    }
-  }
-
-  #try {
-    padding: 2px;
-  }
-
-  #score {
-    padding: 4px 2px;
   }
 }
 
@@ -122,5 +98,47 @@
 
   #ocean {
     background: hsl(215, 13%, 18%);
+  }
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-family: inherit;
+  background: rgba(250, 250, 250, 0.2);
+  text-transform: uppercase;
+  color: #fafafa;
+  cursor: pointer;
+  transition: background 0.1s;
+
+  &:hover {
+    background: rgba(250, 250, 250, 0.3);
+  }
+  &:active {
+    background: rgba(250, 250, 250, 0.4);
+  }
+
+  &.btn-danger {
+    color: rgb(255, 200, 200);
+    background: rgba(255, 20, 0, 0.2);
+    &:hover {
+      background: rgba(255, 20, 0, 0.3);
+    }
+    &:active {
+      background: rgba(255, 20, 0, 0.4);
+    }
+  }
+
+  &.btn-success {
+    color: rgb(200, 255, 200);
+    background: rgba(20, 255, 30, 0.2);
+    &:hover {
+      background: rgba(20, 255, 30, 0.3);
+    }
+    &:active {
+      background: rgba(20, 255, 30, 0.4);
+    }
   }
 }

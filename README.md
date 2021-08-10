@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/miladxdev/morse-app">
-    <img src="./img/logo.png" alt="Logo" width="100" height="100">
+    <img src="./img/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">MORSE APP</h3>
@@ -96,7 +96,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+<kbd>Numpad 0</kbd> Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 

@@ -1,8 +1,8 @@
-let practiceElem = document.querySelector(".practice");
-let tryElement = document.getElementById("try");
-let scoreElement = document.getElementById("score");
-let xpElem = document.querySelector(".xp");
-const trainingCheckbox = document.getElementById("training");
+const practiceElem = selectElem(".practice");
+const tryElement = selectElem("#try");
+const scoreElement = selectElem("#score");
+const xpElem = selectElem(".xp");
+// const trainingCheckbox = selectElem("#training");
 
 let score = 0;
 let randomWord = "";
@@ -16,8 +16,8 @@ for (let i = 0; i < words; i++) {
 tryElement.innerHTML = randomWord;
 
 function checkAnswer() {
-  if (trainingCheckbox.checked) {
-    if (getTextScreen() == randomWord) {
+  if (selectElem("#training").checked) {
+    if (getTextScreen().toUpperCase() === randomWord) {
       score += 5;
       localStorage.setItem("score", score);
 
@@ -40,8 +40,8 @@ function checkAnswer() {
   }
 }
 
-// toggle practice opacity
-trainingCheckbox.addEventListener("change", function () {
+// toggle practice mode
+selectElem("#training").addEventListener("change", function () {
   if (this.checked) {
     practiceElem.style.opacity = "0.8";
   } else {
