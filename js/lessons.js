@@ -1,15 +1,13 @@
 const practiceElem = selectElem(".practice");
 const tryElement = selectElem("#try");
-const scoreElement = selectElem("#score");
 const xpElem = selectElem(".xp");
-// const trainingCheckbox = selectElem("#training");
 
 let score = 0;
 let randomWord = "";
-let words = 1;
+let letters = 1;
 let temp = "";
 
-for (let i = 0; i < words; i++) {
+for (let i = 0; i < letters; i++) {
   randomWord += alph[Math.floor(Math.random() * 26)];
 }
 
@@ -21,12 +19,12 @@ function checkAnswer() {
       score += 5;
       localStorage.setItem("score", score);
 
-      words = Math.floor(score / 100) + 1;
+      letters = Math.floor(score / 100) + 1;
 
       randomWord = "";
-      scoreElement.innerHTML = score;
+      selectElem("#score").innerHTML = score;
 
-      for (let i = 0; i < words; i++) {
+      for (let i = 0; i < letters; i++) {
         randomWord += alph[Math.floor(Math.random() * 26)];
       }
 

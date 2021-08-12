@@ -158,16 +158,21 @@ body {
   position: absolute;
   top: 0;
   left: -350px;
-  background: var(--component-bg);
   width: 300px;
   height: 0px;
   padding: 20px;
-  margin-top: 0;
+  background: var(--component-bg);
   border-radius: 10px;
   overflow: hidden;
+  z-index: 1;
+  transition: 0.4s;
 
   .title {
+    @include flex(space-between, center);
     margin-bottom: 20px;
+    h3 {
+      margin: 0;
+    }
   }
 
   .set-container {
@@ -182,8 +187,6 @@ body {
       color: var(--text-muted);
     }
   }
-
-  transition: 0.4s;
 }
 
 .cheat-code {
@@ -194,31 +197,39 @@ body {
   width: 300px;
   height: 0px;
   padding: 20px;
-  margin-top: 0;
-  border-radius: 10px;
   background: var(--component-bg);
+  border-radius: 10px;
   overflow: hidden;
+  z-index: 1;
   transition: 0.4s;
+
   .title {
+    @include flex(space-between, center);
     margin-bottom: 20px;
+    h3 {
+      margin: 0;
+    }
   }
+
   .alphabet {
-    display: flex;
-    justify-content: center;
+    @include flex(space-around, none);
     font-size: 16px;
     line-height: 22px;
     span {
       color: var(--text-muted);
     }
   }
+
   .letters {
-    width: 130%;
+    width: 40%;
   }
+
   .digits {
-    width: 80%;
+    width: 40%;
   }
 }
 
+// animation
 @-webkit-keyframes blink-caret {
   0% {
     border-right: 1px solid grey;
@@ -233,5 +244,24 @@ body {
   }
   100% {
     border-right: 1px solid rgba(255, 255, 255, 0);
+  }
+}
+
+// responsive
+@media screen and (max-width: 600px) {
+  .morse {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .settings {
+    inset: 0 0 0 0;
+    width: 100%;
+  }
+
+  .cheat-code {
+    inset: 0 0 0 0;
+    width: 100%;
   }
 }

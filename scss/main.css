@@ -437,19 +437,36 @@ body {
   position: absolute;
   top: 0;
   left: -350px;
-  background: var(--component-bg);
   width: 300px;
   height: 0px;
   padding: 20px;
-  margin-top: 0;
+  background: var(--component-bg);
   border-radius: 10px;
   overflow: hidden;
+  z-index: 1;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 .settings .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-bottom: 20px;
+}
+
+.settings .title h3 {
+  margin: 0;
 }
 
 .settings .set-container {
@@ -486,25 +503,48 @@ body {
   width: 300px;
   height: 0px;
   padding: 20px;
-  margin-top: 0;
-  border-radius: 10px;
   background: var(--component-bg);
+  border-radius: 10px;
   overflow: hidden;
+  z-index: 1;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 .cheat-code .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-bottom: 20px;
+}
+
+.cheat-code .title h3 {
+  margin: 0;
 }
 
 .cheat-code .alphabet {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   font-size: 16px;
   line-height: 22px;
 }
@@ -514,11 +554,11 @@ body {
 }
 
 .cheat-code .letters {
-  width: 130%;
+  width: 40%;
 }
 
 .cheat-code .digits {
-  width: 80%;
+  width: 40%;
 }
 
 @-webkit-keyframes blink-caret {
@@ -536,6 +576,22 @@ body {
   }
   100% {
     border-right: 1px solid rgba(255, 255, 255, 0);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .morse {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .settings {
+    inset: 0 0 0 0;
+    width: 100%;
+  }
+  .cheat-code {
+    inset: 0 0 0 0;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=main.css.map */

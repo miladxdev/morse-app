@@ -117,11 +117,11 @@ const settingsSec = selectElem(".settings");
 const settingBtn = selectElem("#set-btn");
 
 settingBtn.addEventListener("click", () => {
-  if (settingsSec.style.height == "650px") {
+  if (settingsSec.style.height == "100%") {
     settingsSec.style.height = "0";
     settingsSec.style.opacity = "0";
   } else {
-    settingsSec.style.height = "650px";
+    settingsSec.style.height = "100%";
     settingsSec.style.opacity = "1";
   }
 });
@@ -131,11 +131,11 @@ const cheatCodeSec = selectElem(".cheat-code");
 const cheatBtn = selectElem("#cheat-btn");
 
 cheatBtn.addEventListener("click", () => {
-  if (cheatCodeSec.style.height == "650px") {
+  if (cheatCodeSec.style.height == "100%") {
     cheatCodeSec.style.height = "0";
     cheatCodeSec.style.opacity = "0";
   } else {
-    cheatCodeSec.style.height = "650px";
+    cheatCodeSec.style.height = "100%";
     cheatCodeSec.style.opacity = "1";
   }
 });
