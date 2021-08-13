@@ -1,6 +1,6 @@
-const practiceElem = selectElem(".practice");
-const tryElement = selectElem("#try");
-const xpElem = selectElem(".xp");
+const practiceElem = element(".practice");
+const tryElement = element("#try");
+const xpElem = element(".xp");
 
 let score = 0;
 let randomWord = "";
@@ -13,16 +13,31 @@ for (let i = 0; i < letters; i++) {
 
 tryElement.innerHTML = randomWord;
 
-function checkAnswer() {
-  if (selectElem("#training").checked) {
-    if (getTextScreen().toUpperCase() === randomWord) {
+function resetAnimation(element) {
+  element.style.animation = "none";
+  element.offsetHeight; /* trigger reflow */
+  element.style.animation = null;
+}
+
+function checkOutput() {
+  if (getTextScreen() === "SOS") {
+    resetAnimation(element("#clear-btn"));
+    resetAnimation(element("#morse-btn"));
+    resetAnimation(element("#delete-btn"));
+    element("#clear-btn").style.animation = "sos 1s ease 5 .1s";
+    element("#morse-btn").style.animation = "sos 1s ease 5 .2s";
+    element("#delete-btn").style.animation = "sos 1s ease 5 .3s";
+  }
+
+  if (element("#training-checkbox").checked) {
+    if (getTextScreen() === randomWord) {
       score += 5;
       localStorage.setItem("score", score);
 
       letters = Math.floor(score / 100) + 1;
 
       randomWord = "";
-      selectElem("#score").innerHTML = score;
+      element("#score").innerHTML = score;
 
       for (let i = 0; i < letters; i++) {
         randomWord += alph[Math.floor(Math.random() * 26)];
@@ -39,7 +54,7 @@ function checkAnswer() {
 }
 
 // toggle practice mode
-selectElem("#training").addEventListener("change", function () {
+element("#training-checkbox").addEventListener("change", function () {
   if (this.checked) {
     practiceElem.style.opacity = "0.8";
   } else {

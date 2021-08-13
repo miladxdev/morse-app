@@ -20,18 +20,17 @@ const alph = [
 ];
 
 const beep = new Audio("snd/beep.wav");
-let isMoueUp = false;
 let ping = 150;
 
 // DOM
-const selectElem = (e) => document.querySelector(e);
+const element = (e) => document.querySelector(e);
 
-let morseScreen = selectElem("#morse-screen");
+let morseScreen = element("#morse-screen");
 // let textScreen = selectElem("#text-screen");
 
-let text = selectElem("#text");
-let lowerCaseCheckbox = selectElem("#lowercase");
-let muteCheckbox = selectElem("#mute");
+let text = element("#text");
+let lowerCaseCheckbox = element("#lowercase");
+let muteCheckbox = element("#mute");
 
 // functions
 getMorseScreen = () => morseScreen.innerText;
@@ -40,7 +39,7 @@ setMorseScreen = (m) => (morseScreen.innerText += m);
 
 clrMorseScreen = () => (morseScreen.innerText = "");
 
-getTextScreen = () => text.innerText;
+getTextScreen = () => text.innerText.toUpperCase();
 
 setTextScreen = (t) => (text.innerHTML += t);
 
@@ -59,8 +58,10 @@ function stage1() {
 function stage2() {
   beep.pause();
   beep.currentTime = 0.1;
+
   flag2 = new Date().getTime();
   let passed = flag2 - flag1;
+
   if (passed < ping) {
     setMorseScreen(".");
   } else if (passed < 3 * ping) {
@@ -70,24 +71,24 @@ function stage2() {
   mt = setTimeout(() => {
     // translate morse
     let index = morseAlph.indexOf(getMorseScreen());
+
     if (morseAlph.includes(getMorseScreen())) {
       setTextScreen(lowerCaseCheckbox.checked ? alph[index].toLowerCase() : alph[index].toUpperCase());
+
       st = setTimeout(() => {
         setTextScreen("&nbsp;"); // print blank space
       }, 7 * ping);
-      checkAnswer();
+
+      checkOutput();
     }
 
     clrMorseScreen();
   }, 3 * ping);
-
-  isMoueUp = true;
 }
-// ...morse button mousedown event
-selectElem("#morse-btn").addEventListener("mousedown", stage1);
 
-// ...morse button mouseup event
-selectElem("#morse-btn").addEventListener("mouseup", stage2);
+element("#morse-btn").addEventListener("mousedown", stage1);
+
+element("#morse-btn").addEventListener("mouseup", stage2);
 
 document.body.addEventListener("keydown", (e) => {
   if (e.code === "Numpad0") stage1();
@@ -98,13 +99,13 @@ document.body.addEventListener("keyup", (e) => {
 });
 
 // ..clear button events
-selectElem("#clear-btn").addEventListener("mousedown", () => {
+element("#clear-btn").addEventListener("mousedown", () => {
   text.innerText = "";
   clearTimeout(st);
 });
 
 // ..delete button events
-selectElem("#delete-btn").addEventListener("mousedown", () => {
+element("#delete-btn").addEventListener("mousedown", () => {
   let text = getTextScreen();
   text = text.slice(0, -1);
   clrTextScreen();
@@ -113,10 +114,9 @@ selectElem("#delete-btn").addEventListener("mousedown", () => {
 });
 
 // toggle settings
-const settingsSec = selectElem(".settings");
-const settingBtn = selectElem("#set-btn");
+const settingsSec = element(".settings");
 
-settingBtn.addEventListener("click", () => {
+element("#set-btn").addEventListener("click", () => {
   if (settingsSec.style.height == "100%") {
     settingsSec.style.height = "0";
     settingsSec.style.opacity = "0";
@@ -127,8 +127,8 @@ settingBtn.addEventListener("click", () => {
 });
 
 // toggle cheat code
-const cheatCodeSec = selectElem(".cheat-code");
-const cheatBtn = selectElem("#cheat-btn");
+const cheatCodeSec = element(".cheat-code");
+const cheatBtn = element("#cheat-btn");
 
 cheatBtn.addEventListener("click", () => {
   if (cheatCodeSec.style.height == "100%") {

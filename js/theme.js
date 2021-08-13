@@ -17,3 +17,5 @@ darkTheme.addEventListener("click", () => {
   localStorage.setItem("theme", "dark");
   setTheme();
 });
+
+// animation
