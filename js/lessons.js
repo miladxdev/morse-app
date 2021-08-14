@@ -1,6 +1,6 @@
-const practiceElem = element(".practice");
+const practiceElement = element(".practice");
 const tryElement = element("#try");
-const xpElem = element(".xp");
+const xpElement = element(".xp");
 
 let score = 0;
 let randomWord = "";
@@ -43,7 +43,7 @@ function checkOutput() {
         randomWord += alph[Math.floor(Math.random() * 26)];
       }
 
-      xpElem.style.width = (score % 100) + "%";
+      xpElement.style.width = (score % 100) + "%";
 
       setTimeout(function () {
         tryElement.innerHTML = randomWord;
@@ -56,8 +56,8 @@ function checkOutput() {
 // toggle practice mode
 element("#training-checkbox").addEventListener("change", function () {
   if (this.checked) {
-    practiceElem.style.opacity = "0.8";
+    practiceElement.style.opacity = "0.8";
   } else {
-    practiceElem.style.opacity = "0.1";
+    practiceElement.style.opacity = "0.1";
   }
 });

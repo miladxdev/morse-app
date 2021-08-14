@@ -25,12 +25,9 @@ let ping = 150;
 // DOM
 const element = (e) => document.querySelector(e);
 
-let morseScreen = element("#morse-screen");
-// let textScreen = selectElem("#text-screen");
-
-let text = element("#text");
-let lowerCaseCheckbox = element("#lowercase");
-let muteCheckbox = element("#mute");
+const text = element("#text");
+const morseScreen = element("#morse-screen");
+const lowerCaseCheckbox = element("#lowercase-checkbox");
 
 // functions
 getMorseScreen = () => morseScreen.innerText;
@@ -49,7 +46,7 @@ let flag1, flag2, mt, st;
 
 function stage1() {
   beep.play();
-  beep.volume = muteCheckbox.checked ? 0 : 1;
+  beep.volume = element("#mute-checkbox").checked ? 0 : 1;
   flag1 = new Date().getTime();
   clearTimeout(mt);
   clearTimeout(st);
