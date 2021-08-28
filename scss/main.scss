@@ -273,6 +273,8 @@ body {
   .settings {
     inset: 0 0 0 0;
     width: 100%;
+    display: flex;
+    @include flex(space-between, none, column);
   }
 
   .cheat-code {

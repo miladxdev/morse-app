@@ -124,6 +124,12 @@ element("#set-btn").addEventListener("click", () => {
   }
 });
 
+element("#close-settings").onclick = () => {
+  settings.style.height = "0";
+  settings.style.opacity = "0";
+  localStorage.setItem("setting", "false");
+};
+
 // toggle cheat code
 const cheatCode = element(".cheat-code");
 
@@ -138,3 +144,9 @@ element("#cheat-btn").addEventListener("click", () => {
     localStorage.setItem("cheat", "true");
   }
 });
+
+element("#close-cheat").onclick = () => {
+  cheatCode.style.height = "0";
+  cheatCode.style.opacity = "0";
+  localStorage.setItem("cheat", "false");
+};
