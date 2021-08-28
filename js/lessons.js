@@ -1,8 +1,7 @@
 const practiceElement = element(".practice");
 const tryElement = element("#try");
-const xpElement = element(".xp");
 
-let score = 0;
+let score = JSON.parse(localStorage.getItem("score"));
 let randomWord = "";
 let letters = 1;
 let temp = "";
@@ -13,17 +12,18 @@ for (let i = 0; i < letters; i++) {
 
 tryElement.innerHTML = randomWord;
 
-function resetAnimation(element) {
-  element.style.animation = "none";
-  element.offsetHeight; /* trigger reflow */
-  element.style.animation = null;
+function resetAnimation(elem) {
+  element(elem).style.animation = "none";
+  element(elem).offsetHeight; /* trigger reflow */
+  element(elem).style.animation = null;
 }
 
 function checkOutput() {
   if (getTextScreen() === "SOS") {
-    resetAnimation(element("#clear-btn"));
-    resetAnimation(element("#morse-btn"));
-    resetAnimation(element("#delete-btn"));
+    resetAnimation("#clear-btn");
+    resetAnimation("#morse-btn");
+    resetAnimation("#delete-btn");
+
     element("#clear-btn").style.animation = "sos 1s ease 5 .1s";
     element("#morse-btn").style.animation = "sos 1s ease 5 .2s";
     element("#delete-btn").style.animation = "sos 1s ease 5 .3s";
@@ -43,7 +43,7 @@ function checkOutput() {
         randomWord += alph[Math.floor(Math.random() * 26)];
       }
 
-      xpElement.style.width = (score % 100) + "%";
+      element(".xp").style.width = (score % 100) + "%";
 
       setTimeout(function () {
         tryElement.innerHTML = randomWord;
@@ -61,3 +61,11 @@ element("#training-checkbox").addEventListener("change", function () {
     practiceElement.style.opacity = "0.1";
   }
 });
+
+// reset data
+element("#reset-btn").onclick = () => {
+  score = 0;
+  element(".xp").style.width = 0;
+  element("#score").innerHTML = 0;
+  localStorage.setItem("score", 0);
+};

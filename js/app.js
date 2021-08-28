@@ -27,7 +27,6 @@ const element = (e) => document.querySelector(e);
 
 const text = element("#text");
 const morseScreen = element("#morse-screen");
-const lowerCaseCheckbox = element("#lowercase-checkbox");
 
 // functions
 getMorseScreen = () => morseScreen.innerText;
@@ -70,7 +69,7 @@ function stage2() {
     let index = morseAlph.indexOf(getMorseScreen());
 
     if (morseAlph.includes(getMorseScreen())) {
-      setTextScreen(lowerCaseCheckbox.checked ? alph[index].toLowerCase() : alph[index].toUpperCase());
+      setTextScreen(element("#lowercase-checkbox").checked ? alph[index].toLowerCase() : alph[index].toUpperCase());
 
       st = setTimeout(() => {
         setTextScreen("&nbsp;"); // print blank space
@@ -111,28 +110,31 @@ element("#delete-btn").addEventListener("mousedown", () => {
 });
 
 // toggle settings
-const settingsSec = element(".settings");
+const settings = element(".settings");
 
 element("#set-btn").addEventListener("click", () => {
-  if (settingsSec.style.height == "100%") {
-    settingsSec.style.height = "0";
-    settingsSec.style.opacity = "0";
+  if (settings.style.height == "100%") {
+    settings.style.height = "0";
+    settings.style.opacity = "0";
+    localStorage.setItem("setting", "false");
   } else {
-    settingsSec.style.height = "100%";
-    settingsSec.style.opacity = "1";
+    settings.style.height = "100%";
+    settings.style.opacity = "1";
+    localStorage.setItem("setting", "true");
   }
 });
 
 // toggle cheat code
-const cheatCodeSec = element(".cheat-code");
-const cheatBtn = element("#cheat-btn");
+const cheatCode = element(".cheat-code");
 
-cheatBtn.addEventListener("click", () => {
-  if (cheatCodeSec.style.height == "100%") {
-    cheatCodeSec.style.height = "0";
-    cheatCodeSec.style.opacity = "0";
+element("#cheat-btn").addEventListener("click", () => {
+  if (cheatCode.style.height == "100%") {
+    cheatCode.style.height = "0";
+    cheatCode.style.opacity = "0";
+    localStorage.setItem("cheat", "false");
   } else {
-    cheatCodeSec.style.height = "100%";
-    cheatCodeSec.style.opacity = "1";
+    cheatCode.style.height = "100%";
+    cheatCode.style.opacity = "1";
+    localStorage.setItem("cheat", "true");
   }
 });
