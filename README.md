@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/miladxdev/morse-app">
-    <img src="./img/logo.png" alt="Logo" width="80" height="80">
+    <img src="./img/faveicon.png" alt="Logo" width="90" height="90">
   </a>
 
   <h3 align="center">MORSE APP</h3>
@@ -29,7 +29,7 @@
 </p>
 
 <!-- TABLE OF CONTENTS -->
-<details>
+<details open="open">
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -62,18 +62,16 @@
 
 ![Product Name Screen Shot][product-screenshot]
 
-<h3><a href="https://miladxdev.github.io/morse-app/">Live preview</a></h3>
+<h3><a href="https://miladxdev.github.io/morse-app/">------------- Live preview »</a></h3>
 
 Morse code is a method used in telecommunication to encode text characters as standardized sequences of two different signal durations, called dots and dashes, or dits and dahs. Morse code is named after Samuel Morse, one of the inventors of the telegraph.
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 - HTML
 - CSS
 - SCSS
-- Javascript
+- JavaScript
 
 <!-- GETTING STARTED -->
 
@@ -96,7 +94,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Usage
 
-<kbd>Numpad 0</kbd> Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Click on middle button or <kbd>Numpad 0</kbd> to start writing morse code
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
@@ -128,7 +126,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Milad Gharibi - [@\_itsmilad](https://twitter.com/your_username) - email@example.com
+Milad Gharibi - [@milad](https://twitter.com/your_username) - email@example.com
 
 Project Link: [github.com/miladxdev/morse-app](https://github.com/miladxdev/morse-app)
 
