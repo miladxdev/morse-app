@@ -2,15 +2,15 @@ const practiceElement = element(".practice");
 const tryElement = element("#try");
 
 let score = JSON.parse(localStorage.getItem("score"));
-let randomWord = "";
-let letters = 1;
+let randomLetter = "";
+let letterCounter = 1;
 let temp = "";
 
-for (let i = 0; i < letters; i++) {
-  randomWord += alph[Math.floor(Math.random() * 26)];
+for (let i = 0; i < letterCounter; i++) {
+  randomLetter += letters[Math.floor(Math.random() * 26)];
 }
 
-tryElement.innerHTML = randomWord;
+tryElement.innerHTML = randomLetter;
 
 function resetAnimation(elem) {
   element(elem).style.animation = "none";
@@ -30,23 +30,23 @@ function checkOutput() {
   }
 
   if (element("#training-checkbox").checked) {
-    if (getTextScreen() === randomWord) {
+    if (getTextScreen() === randomLetter) {
       score += 5;
       localStorage.setItem("score", score);
 
-      letters = Math.floor(score / 100) + 1;
+      letterCounter = Math.floor(score / 100) + 1;
 
-      randomWord = "";
+      randomLetter = "";
       element("#score").innerHTML = score;
 
-      for (let i = 0; i < letters; i++) {
-        randomWord += alph[Math.floor(Math.random() * 26)];
+      for (let i = 0; i < letterCounter; i++) {
+        randomLetter += letters[Math.floor(Math.random() * 26)];
       }
 
       element(".xp").style.width = (score % 100) + "%";
 
       setTimeout(function () {
-        tryElement.innerHTML = randomWord;
+        tryElement.innerHTML = randomLetter;
         clrTextScreen();
       }, 2000);
     }

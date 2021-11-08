@@ -1,5 +1,5 @@
 // prettier-ignore
-const morseAlph = [
+const signals = [
   ".-", "-...", "-.-.", "-..", ".", "..-.","--.",
   "....", "..", ".---", "-.-", ".-..","--", "-.",
   "---", ".--.", "--.-", ".-.", "...", "-", "..-",
@@ -10,7 +10,7 @@ const morseAlph = [
   "-..-.",".-..-.",".--.-.","-...-","---.",
 ];
 // prettier-ignore
-const alph = [
+const letters = [
   "A", "B", "C", "D", "E", "F", "G", "H",
   "I", "J", "K", "L", "M", "N", "O", "P",
   "Q", "R", "S", "T", "U", "V", "W", "X",
@@ -20,7 +20,7 @@ const alph = [
 ];
 
 const beep = new Audio("snd/beep.wav");
-let ping = 150;
+let ping = 200; // time to print dot .
 
 // DOM
 const element = (e) => document.querySelector(e);
@@ -66,10 +66,10 @@ function stage2() {
 
   mt = setTimeout(() => {
     // translate morse
-    let index = morseAlph.indexOf(getMorseScreen());
+    let index = signals.indexOf(getMorseScreen());
 
-    if (morseAlph.includes(getMorseScreen())) {
-      setTextScreen(element("#lowercase-checkbox").checked ? alph[index].toLowerCase() : alph[index].toUpperCase());
+    if (signals.includes(getMorseScreen())) {
+      setTextScreen(element("#lowercase-checkbox").checked ? letters[index].toLowerCase() : letters[index].toUpperCase());
 
       st = setTimeout(() => {
         setTextScreen("&nbsp;"); // print blank space
@@ -82,14 +82,14 @@ function stage2() {
   }, 3 * ping);
 }
 
+// mouse events
 element("#morse-btn").addEventListener("mousedown", stage1);
-
 element("#morse-btn").addEventListener("mouseup", stage2);
 
+// keyboard Numpad[0] events
 document.body.addEventListener("keydown", (e) => {
   if (e.code === "Numpad0") stage1();
 });
-
 document.body.addEventListener("keyup", (e) => {
   if (e.code === "Numpad0") stage2();
 });
