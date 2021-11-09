@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/miladxdev/morse-app">
-    <img src="./img/faveicon.png" alt="Logo" width="90" height="90">
+    <img src="./img/faveicon.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">MORSE APP</h3>
@@ -29,7 +29,7 @@
 </p>
 
 <!-- TABLE OF CONTENTS -->
-<details open="open">
+<details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -60,18 +60,20 @@
 
 ## About The Project
 
+`screeshot`
+
 ![Product Name Screen Shot][product-screenshot]
 
-<h3><a href="https://miladxdev.github.io/morse-app/">------------- Live preview »</a></h3>
+<h3><a href="https://miladxdev.github.io/morse-app">LIVE DEMO ☝</a></h3>
 
 Morse code is a method used in telecommunication to encode text characters as standardized sequences of two different signal durations, called dots and dashes, or dits and dahs. Morse code is named after Samuel Morse, one of the inventors of the telegraph.
 
 ### Built With
 
-- HTML
-- CSS
-- SCSS
-- JavaScript
+- `HTML`
+- `CSS`
+- `SCSS`
+- `JavaScript`
 
 <!-- GETTING STARTED -->
 
@@ -126,7 +128,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Milad Gharibi - [@milad](https://twitter.com/your_username) - email@example.com
+Milad Gharibi - miladxdev@gmail.com
 
 Project Link: [github.com/miladxdev/morse-app](https://github.com/miladxdev/morse-app)
 
