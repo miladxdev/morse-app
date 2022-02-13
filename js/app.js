@@ -20,7 +20,7 @@ const letters = [
 ];
 
 const beep = new Audio("snd/beep.wav");
-let ping = 200; // time to print dot .
+let ping = 100; // time to print dot .
 
 // DOM
 const element = (e) => document.querySelector(e);
@@ -29,17 +29,17 @@ const text = element("#text");
 const morseScreen = element("#morse-screen");
 
 // functions
-getMorseScreen = () => morseScreen.innerText;
+const getMorseScreen = () => morseScreen.innerText;
 
-setMorseScreen = (m) => (morseScreen.innerText += m);
+const setMorseScreen = (m) => (morseScreen.innerText += m);
 
-clrMorseScreen = () => (morseScreen.innerText = "");
+const clrMorseScreen = () => (morseScreen.innerText = "");
 
-getTextScreen = () => text.innerText.toUpperCase();
+const getTextScreen = () => text.innerText.toUpperCase();
 
-setTextScreen = (t) => (text.innerHTML += t);
+const setTextScreen = (t) => (text.innerHTML += t);
 
-clrTextScreen = () => (text.innerText = "");
+const clrTextScreen = () => (text.innerText = "");
 
 let flag1, flag2, mt, st;
 
